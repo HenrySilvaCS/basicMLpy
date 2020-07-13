@@ -1,5 +1,5 @@
 # basicMLpy <br />
-basicMLpy is a package that implements simple machine learning algorithms. It currently contains one module that implements  <br />
+basicMLpy is a package that implements simple machine learning algorithms. It currently contains one module that implements regression and classification algorithms.  <br />
 The basicMLpy_regression_and_classification module contains the following functionalities:
 * Regression models:<br />
   * Linear Regression <br />
