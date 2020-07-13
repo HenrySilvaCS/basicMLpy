@@ -21,3 +21,5 @@ https://test.pypi.org/project/basicMLpy-pkg-HENRY-SILVA/<br />
 https://github.com/HenrySilvaCS/basicMLpy
 ## Final thoughts <br />
 This is a work in progress project, so more functionalities will be added with time. The main feature that will be implemented in the near future is a module focused on boosting methods and a module focused on kernel density estimators.
+## Author <br />
+Henrique Silva
