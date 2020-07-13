@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="basicMLpy-pkg-HENRY-SILVA", # Replace with your own username
-    version="0.0.4",
+    version="0.0.3",
     author="Henrique Silva",
     author_email="henriquesoares@dcc.ufmg.br",
     description="A collection of simple machine learning algorithms",
