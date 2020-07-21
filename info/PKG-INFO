@@ -1,36 +1,40 @@
 Metadata-Version: 2.1
-Name: basicMLpy-pkg-HENRY-SILVA
-Version: 0.0.3
+Name: basicMLpy
+Version: 0.0.6
 Summary: A collection of simple machine learning algorithms
 Home-page: https://github.com/HenrySilvaCS/basicMLpy
 Author: Henrique Silva
 Author-email: henriquesoares@dcc.ufmg.br
 License: UNKNOWN
-Description: basicMLpy
-        =========
-        
-        basicMLpy is a package that implements simple machine learning
-        algorithms. It currently contains one module that implements <br /> The
-        basicMLpy\_regression\_and\_classification module contains the following
-        functionalities: \* Regression models:<br /> \* Linear Regression <br />
-        \* Ridge Regression <br /> \* Basis expanded regression, that allows for
-        nonlinear models<br /> \* Classification models:<br /> \* Binary
-        classification through the IRLS(Iteratively Reweighted Least Squares)
-        method<br /> \* K-class classification using the one-vs-all technique,
-        also calculated through the IRLS(Iteratively Reweighted Least Squares)
-        algorithm. <br /> \#\# Documentation The documentation for each function
-        can be found in the main code,i.e. basicMLpy.py file on the main
-        branch.<br /> \#\# Installation To install basicMLpy run the following
-        command: <br />
-        `pip install --index-url https://test.pypi.org/simple/ --no-deps basicMLpy-pkg-HENRY-SILVA`
-        <br /> \#\# Dependencies basicMLpy requires Python \>= 3.8, Numpy \>=
-        1.19, scikit-learn \>= 0.23. <br /> \#\# On pypi
-        https://test.pypi.org/project/basicMLpy-pkg-HENRY-SILVA/ \#\# On Github
-        https://github.com/HenrySilvaCS/basicMLpy \#\# Final thoughts This is a
-        work in progress project, so more functionalities will be added with
-        time. The main feature that will be implemented in the near future is a
-        module focused on boosting methods and a module focused on kernel
-        density estimators.
+Description: # basicMLpy <br />
+        basicMLpy is a package that implements simple machine learning algorithms. It currently contains four modules that implements multiple machine learning techniques for classification and regression.<br />
+        ### The basicMLpy.regression module contains the following functionalities:
+        * Linear Regression 
+        * Ridge Regression 
+        * Basis expanded regression, that allows for nonlinear models 
+        * Error evaluation through Mean Squared Error and Huber Loss
+        ### The basicMLpy.classification module contains the following functionalities:
+        * Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
+        * Error evaluation through accuracy and exponential loss
+        ### The basicMLpy.nearest_neighbors module contains the following functionalities:
+        * An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems
+        ### The basicMLpy.cross_validation module contains the following functionalities:
+        * A Cross-Validation algorithm for the functions presented by the basicMLpy package
+        ## Documentation <br />
+        The documentation will be available at a proper site soon. For now it can be found in the main code for each module.<br />
+        ## Installation <br />
+        To install basicMLpy run the following command: <br />
+        `pip install -i https://test.pypi.org/simple/ basicMLpy` <br />
+        ## Dependencies <br />
+        basicMLpy requires Python >= 3.8, Numpy >= 1.19, scikit-learn >= 0.23. <br />
+        ## On pypi <br />
+        https://test.pypi.org/project/basicMLpy-pkg-HENRY-SILVA/<br />
+        ## On Github <br />
+        https://github.com/HenrySilvaCS/basicMLpy
+        ## Some thoughts <br />
+        This is a work in progress project, so more functionalities will be added with time. The main feature that will be implemented in the near future is a module focused on boosting methods and a module focused on kernel density estimators.
+        ## Author <br />
+        Henrique Silva
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
