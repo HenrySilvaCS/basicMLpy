@@ -20,7 +20,7 @@ To install basicMLpy run the following command: <br />
 ## Dependencies <br />
 basicMLpy requires Python >= 3.8, Numpy >= 1.19, scikit-learn >= 0.23. <br />
 ## On pypi <br />
-https://test.pypi.org/project/basicMLpy-pkg-HENRY-SILVA/<br />
+https://test.pypi.org/project/basicMLpy//<br />
 ## On Github <br />
 https://github.com/HenrySilvaCS/basicMLpy
 ## Some thoughts <br />
