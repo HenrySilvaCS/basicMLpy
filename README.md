@@ -26,4 +26,4 @@ https://github.com/HenrySilvaCS/basicMLpy
 ## Some thoughts <br />
 This is a work in progress project, so more functionalities will be added with time. The main feature that will be implemented in the near future is a module focused on boosting methods and a module focused on kernel density estimators.
 ## Author <br />
-Henrique  Soares Assumpção e Silva
+Henrique Silva
