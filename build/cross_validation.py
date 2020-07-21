@@ -1,7 +1,7 @@
 # # basicMLpy.cross_validation module
 import numpy as np
-import regression as bpr 
-import classification as bpc
+from basicMLpy import regression as bpr 
+from basicMLpy import classification as bpc
 def error(prediction,y):
     """
     Calculates the error(misclassification) w.r.t. the outputs.
@@ -96,9 +96,8 @@ class CrossValidation:
                 input array of input points, without the intercept(raw data).
             y: array
                 input array of output points.
-        Returns:
-            self.scores: array
-                outputs the array of cross-validation scores calculated by the algorithm. these scores represent the error of each iteration of the cross-validation.
+        Functionality:
+            stores information about the scores in self.scores and information about the parameters in self.parameters.
         """
         self.input = x
         self.output = y 
@@ -166,7 +165,14 @@ class CrossValidation:
         else:
             raise ValueError('Insert a valid function')               
         self.parameters = np.array(self.parameters)
-        return self.scores  
+    def cv_scores(self):
+        """
+        Gives the calculated cross-validation scores for the dataset.
+        Returns:
+            self.scores: array
+                outputs the array of cross-validation scores calculated by the algorithm. these scores represent the error of each iteration of the cross-validation.
+        """
+        return self.scores   
     def expected_test_error(self):
         """
         Calculates the expected test error of the model, that by definition is the average of the sum of the cross-validation error found by the algorithm.
