@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="basicMLpy-pkg-HENRY-SILVA", # Replace with your own username
-    version="0.0.4",
+    name="basicMLpy", 
+    version="0.0.6",
     author="Henrique Silva",
     author_email="henriquesoares@dcc.ufmg.br",
     description="A collection of simple machine learning algorithms",
