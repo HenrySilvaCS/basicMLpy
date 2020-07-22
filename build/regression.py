@@ -75,7 +75,7 @@ def linear_regression(x,y,tsize):
             huber_loss += np.square(Y_test[i] - pred[i])
         else:
             huber_loss += 2 * delta * np.absolute(Y_test[i] - pred[i]) - delta**2
-    return theta, mse,2, prediction, huber_loss,2
+    return theta, mse, prediction, huber_loss
 def basis_expansion(x,y,btype,tsize):
     """
     Executes a basis expansion on the array of inputs and then fits a linear regression model on the dataset.
@@ -123,7 +123,7 @@ def basis_expansion(x,y,btype,tsize):
                 huber_loss += np.square(Y_test[i] - pred[i])
             else:
                 huber_loss += 2 * delta * np.absolute(Y_test[i] - pred[i]) - delta**2
-        return theta,mse,2, prediction, huber_loss
+        return theta,mse, prediction, huber_loss
     if btype == 'poly':
         X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size = tsize, random_state=5)
         X_test = X_test.reshape((-1,np.size(X_train,1)))
@@ -187,7 +187,7 @@ def ridge_regression(x,y,const,tsize):
             huber_loss += np.square(Y_test[i] - pred[i])
         else:
             huber_loss += 2 * delta * np.absolute(Y_test[i] - pred[i]) - delta**2
-    return theta, mse,2, prediction, huber_loss
+    return theta, mse, prediction, huber_loss
 def mse_and_huber(xtest,ytest,parameters):
     """
     Calculates the Mean Squared Error and the Huber Loss of a given model w.r.t. the test dataset.
@@ -383,3 +383,4 @@ class BERegression:
             return float(self.result[3])
         else:
             raise ValueError("Please insert a valid error type.")        
+#####

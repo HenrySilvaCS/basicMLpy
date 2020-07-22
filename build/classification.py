@@ -203,7 +203,7 @@ def acc_and_loss(xtest,ytest,parameters,k):
         prediction_loss = prediction
         for i in range(len(ytest)):
             exp_loss += np.exp(-1 * ytest[i] * prediction_loss[i])
-        return np.round(accuracy,2), np.round(exp_loss,2), prediction
+        return accuracy, float(exp_loss), prediction
     if k >= 3:
         ones = np.ones((np.size(xtest,0),1))
         xtest = np.hstack((ones,xtest))
@@ -227,7 +227,7 @@ def acc_and_loss(xtest,ytest,parameters,k):
         exp_loss = 0
         for i in range(len(ytest)):
             exp_loss += np.exp(-1 * ytest[i] * results_loss[i] )
-        return accuracy, float(exp_loss,2), prediction
+        return accuracy, float(exp_loss), prediction
 class IRLSClassifier:
     """
     Iteratively Reweighted Least Squares algorithmn for classification, that can solve both binary and multiclass problems.

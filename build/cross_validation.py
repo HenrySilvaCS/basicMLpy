@@ -88,6 +88,8 @@ class CrossValidation:
             raise ValueError('Invalid value for k, it must be an integer bigger than two')
         if self.n_folds  <= 1:
             raise ValueError("Invalid value for n_folds, it must be bigger than one")
+        if function == 'IRLSClassifier' and k == None:
+            raise ValueError("Insert a value for k")
     def fit(self,x,y):
         """
         Performs the cross-validation on a given dataset.
@@ -189,5 +191,8 @@ class CrossValidation:
             self.parameters[index]: array_like
                 outputs the array of the parameters that yielded the lowest cross-validation error.
         """
-        index = np.argmin(self.error)
+        error = sum(self.scores)/self.n_folds
+        index = np.argmin(error)
         return self.parameters[index]
+###
+
