@@ -66,14 +66,13 @@ def newton_step(dataset,y,n_iter):
 def binary_classification_default(x,y,tsize):
     """
     Fits a binary classification model on a given dataset of k = 2 classes.
-    Splits the dataset(x,y) into training and validation sets, using the train_test_split function from sklearn. Default test_size = 0.2.
     Inputs:
         x: array
             input array of input points to be used as training set, without the intercept(raw data).
         y: array
             input array of output points, usually a column vector with same number of rows as x.
         tsize: float
-            Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set.
+            Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set; default is set to 0.2.
     Returns:
         theta: array
             outputs array of predictors/parameters calculated by the algorithm.
@@ -106,14 +105,13 @@ def binary_classification_default(x,y,tsize):
 def one_vs_all_default(x,y,k,tsize):
     """
     Fits a one-vs-all classification model on a given dataset of k > 2 classes.
-    Splits the dataset(x,y) into training and validation sets, using the train_test_split function from sklearn. Default test_size = 0.2.
     Inputs:
         x: array
             input array of input points to be used as training set, without the intercept(raw data).
         y: array
             input array of output points, usually a column vector with same number of rows as x.
         tsize: float
-            Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set.
+            Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set; default is set to 0.2.
     Returns:
         theta: array
             outputs array of predictors/parameters calculated by the algorithm.
@@ -242,7 +240,7 @@ class IRLSClassifier:
             k: int
                 input the number k of classes associated with the dataset 
             tsize: float
-                Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set.
+                Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set; default is set to 0.2.
         """
         self.k = k 
         if self.k <= 1:

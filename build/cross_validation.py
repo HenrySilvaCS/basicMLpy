@@ -88,7 +88,7 @@ class CrossValidation:
             raise ValueError('Invalid value for k, it must be an integer bigger than two')
         if self.n_folds  <= 1:
             raise ValueError("Invalid value for n_folds, it must be bigger than one")
-    def cross_validate(self,x,y):
+    def fit(self,x,y):
         """
         Performs the cross-validation on a given dataset.
         Inputs:
