@@ -12,6 +12,7 @@ basicMLpy is a package that implements simple machine learning algorithms. It cu
 * An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems
 ### The basicMLpy.cross_validation module contains the following functionalities:
 * A Cross-Validation algorithm for the functions presented by the basicMLpy package
+* Functions for model selection
 ## Documentation <br />
 The documentation will be available at a proper site soon. For now it can be found in the main code for each module.<br />
 ## Installation <br />
