@@ -96,16 +96,16 @@ class NearestNeighbors:
             y: array
                 input the array of output points.
         Returns:
-            self.predictions: array
+            predictions: array
                 outputs the array of predictions.
         """
         self.input = x 
         self.output = y.reshape((-1,1))
         self.data = np.hstack((self.input,self.output))
-        self.predictions = np.zeros((len(self.output)))
+        predictions = np.zeros((len(self.output)))
         for i in range(len(self.predictions)):
-            self.predictions[i] = make_prediction(self.data,i,self.n_neighbors,self.weights)
-        return self.predictions 
+            predictions[i] = make_prediction(self.data,i,self.n_neighbors,self.weights)
+        return predictions 
     def kneighbors(self,row_num,n_neighbors):
         """
         Gets the k-nearest neighbors to a certain point.
@@ -114,8 +114,6 @@ class NearestNeighbors:
                 input the index(row number) of the desired point to calculate the k nearest neighbors.
             n_neighbors: int
                 input the number of neighbors to be calculated.     
-        """
-        self.row = row_num
-        self.k = n_neighbors 
-        self.kneighbors = get_neighbors(self.input,self.row,self.k)
-        return self.kneighbors
+        """ 
+        kneighbors = get_neighbors(self.input,row_num,n_neighbors)
+        return kneighbors

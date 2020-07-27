@@ -27,7 +27,7 @@ def probability_vector(dataset,parameters):
              input the column vector of predictors.
     Returns: 
         p: array
-             outputs the p vector of probabilities
+             outputs the p vector of probabilities.
     """
     p = np.zeros((len(dataset),1))
     for i in range(len(dataset)):
@@ -57,13 +57,18 @@ def newton_step(dataset,y,n_iter):
              input array of input points, already expected to include the intercept.
         y: array
              input array of output points, usually a column vector.
+        n_iter: int
+            Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence.
+    Returns:
+        theta: array
+            outputs array of predictors/parameters calculated by the algorithm.   
     """
     theta = np.zeros((np.size(dataset,1),1))
     for i in range(n_iter):
         z = dataset @ theta + np.linalg.pinv(weight_matrix(dataset,theta)) @ (y - probability_vector(dataset,theta))
         theta = np.linalg.pinv(dataset.T @ weight_matrix(dataset,theta) @ dataset) @ dataset.T @ weight_matrix(dataset,theta) @ z 
     return theta
-def binary_classification_default(x,y,tsize):
+def binary_classification_default(x,y,tsize,n_iter):
     """
     Fits a binary classification model on a given dataset of k = 2 classes.
     Inputs:
@@ -73,6 +78,8 @@ def binary_classification_default(x,y,tsize):
             input array of output points, usually a column vector with same number of rows as x.
         tsize: float
             Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set; default is set to 0.2.
+        n_iter: int
+            Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence.
     Returns:
         theta: array
             outputs array of predictors/parameters calculated by the algorithm.
@@ -87,7 +94,7 @@ def binary_classification_default(x,y,tsize):
     x = np.hstack((ones,x))
     X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size = tsize, random_state=5)
     Y_train = Y_train.reshape((len(Y_train),1))
-    theta = newton_step(X_train,Y_train,15)
+    theta = newton_step(X_train,Y_train,n_iter)
     prediction = probability_vector(X_test,theta)
     p = np.round(prediction)
     counter = 0
@@ -102,7 +109,7 @@ def binary_classification_default(x,y,tsize):
         exp_loss += np.exp(-1 * Y_test[i] * prediction[i])
         prediction_final = probability_vector(x,theta)
     return theta, accuracy, float(exp_loss), np.round(prediction_final)
-def one_vs_all_default(x,y,k,tsize):
+def one_vs_all_default(x,y,k,tsize,n_iter):
     """
     Fits a one-vs-all classification model on a given dataset of k > 2 classes.
     Inputs:
@@ -112,6 +119,8 @@ def one_vs_all_default(x,y,k,tsize):
             input array of output points, usually a column vector with same number of rows as x.
         tsize: float
             Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set; default is set to 0.2.
+        n_iter: int
+            Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence.
     Returns:
         theta: array
             outputs array of predictors/parameters calculated by the algorithm.
@@ -141,7 +150,7 @@ def one_vs_all_default(x,y,k,tsize):
                     target[w] = 1
                 else:
                     target[w] = 0
-            parameters = newton_step(X_train,target,15)
+            parameters = newton_step(X_train,target,n_iter)
             theta[:,i] = parameters[:,0]
             prob = probability_vector(X_test,parameters)
             prob_final = probability_vector(x,parameters)
@@ -166,18 +175,14 @@ def one_vs_all_default(x,y,k,tsize):
         for i in range(len(result)):
             exp_loss += np.exp(-1 * Y_test[i] * results_loss[i] )
         return theta, accuracy, float(exp_loss), result_final
-def acc_and_loss(xtest,ytest,parameters,k):
+def acc_and_loss(prediction,ytest):
     """
     Calculates the accuracy and the huber loss of a given model w.r.t. the test dataset.
     Inputs:
-        xtest: array
-            input array of all points that constitute the input test dataset.
+        prediction: array
+            input array of predictions made by some algorithm.
         ytest: array
             input array of all points that constitute the output test dataset.
-        parameters: array
-            input array of parameters/predictors to be used in the prediction algorithm.
-        k: int
-            input number of classes of the classification problem.
     Returns:
         accuracy: float
             outputs the approximate percentual accuracy of the model w.r.t. the test set.
@@ -186,66 +191,39 @@ def acc_and_loss(xtest,ytest,parameters,k):
         
     """
     ytest = ytest.reshape((-1,1))
-    if k == 1:
-        raise ValueError("k must be >= 2") 
-    if k == 2:
-        ones = np.ones((np.size(xtest,0),1))
-        xtest = np.hstack((ones,xtest))
-        prediction = np.round(probability_vector(xtest,parameters))
-        counter = 0
-        for i in range(len(ytest)):
-            if np.absolute(ytest[i] - prediction[i]) == 0:
-                counter = counter
-            else:
-                counter += 1
-        accuracy = ((len(ytest) - counter)/len(ytest)) * 100
-        exp_loss = 0
-        prediction_loss = prediction
-        for i in range(len(ytest)):
-            exp_loss += np.exp(-1 * ytest[i] * prediction_loss[i])
-        return accuracy, float(exp_loss), prediction
-    if k >= 3:
-        ones = np.ones((np.size(xtest,0),1))
-        xtest = np.hstack((ones,xtest))
-        probability_matrix = np.zeros((len(ytest),k))
-        prediction = np.zeros((len(ytest),1))
-        for j in range(k):
-            prob = probability_vector(xtest,parameters[:,j])
-            probability_matrix[:,j] = prob[:,0]
-        for i in range(len(prediction)):
-            prediction[i,0] = np.argmax(probability_matrix[i,:])
-        results_loss = np.zeros((len(probability_matrix),1))
-        for i in range(len(probability_matrix)):
-            results_loss[i,0] = probability_matrix[i,np.argmax(probability_matrix[i,:])]
-        counter = 0
-        for i in range(len(ytest)):
-            if np.absolute(ytest[i] - prediction[i]) == 0:
-                counter = counter
-            else:
-                counter += 1
-        accuracy = ((len(ytest) - counter)/len(ytest)) * 100
-        exp_loss = 0
-        for i in range(len(ytest)):
-            exp_loss += np.exp(-1 * ytest[i] * results_loss[i] )
-        return accuracy, float(exp_loss), prediction
+    counter = 0
+    for i in range(len(ytest)):
+        if np.absolute(ytest[i] - prediction[i]) == 0:
+            counter = counter
+        else:
+            counter += 1
+    accuracy = ((len(ytest) - counter)/len(ytest)) * 100
+    exp_loss = 0
+    prediction_loss = prediction
+    for i in range(len(ytest)):
+        exp_loss += np.exp(-1 * ytest[i] * prediction_loss[i])
+    return accuracy, float(exp_loss)
 class IRLSClassifier:
     """
     Iteratively Reweighted Least Squares algorithmn for classification, that can solve both binary and multiclass problems.
     Executes a given model based on user input.
     """
-    def __init__(self,k,tsize = 0.2):
+    def __init__(self,k,tsize = 0.2,n_iter=15):
         """
         Initialize self.
         Inputs:
             k: int
-                input the number k of classes associated with the dataset 
+                input the number k of classes associated with the dataset. 
             tsize: float
                 Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set; default is set to 0.2.
+            n_iter: int
+                Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence; default is set to 15.
         """
         self.k = k 
         if self.k <= 1:
             raise ValueError("Insert a valida value for K")
         self.tsize = tsize 
+        self.n_iter = n_iter
     def fit(self,x,y):
         """
         Fits the classification model on the dataset.
@@ -260,9 +238,9 @@ class IRLSClassifier:
         self.x = x 
         self.y = y 
         if self.k == 2:
-            self.result = binary_classification_default(self.x,self.y,self.tsize)
+            self.result = binary_classification_default(self.x,self.y,self.tsize,self.n_iter)
         elif self.k >= 3 : 
-            self.result = one_vs_all_default(self.x,self.y,self.k,self.tsize)
+            self.result = one_vs_all_default(self.x,self.y,self.k,self.tsize,self.n_iter)
         else:
             raise ValueError("Invalid value of k for classification.")
     def predict(self,x):
@@ -272,24 +250,48 @@ class IRLSClassifier:
             x: float or array
                 input the array of input points or a single input point.
         Returns:
-            self.predict: float or array
-                outputs the prediction made by the classification algorithm
+            predict: float or array
+                outputs the prediction made by the classification algorithm.
         """
-        self.input = x 
-        ones = np.ones((len(self.input),1))
-        self.input = np.hstack((ones,self.input))
+        inputx = x 
+        ones = np.ones((len(inputx),1))
+        inputx = np.hstack((ones,inputx))
         if self.k == 2:
-            self.predict = np.round(probability_vector(self.input,self.result[0]))
-            return self.predict
+            predict = np.round(probability_vector(inputx,self.result[0]))
+            return predict
         else:
-            probability_matrix = np.zeros((len(self.input),self.k))
-            self.predict = np.zeros((len(self.input),1))
+            probability_matrix = np.zeros((len(inputx),self.k))
+            predict = np.zeros((len(inputx),1))
             for j in range(self.k):
-                prob = probability_vector(self.input,self.result[0][:,j])
+                prob = probability_vector(inputx,self.result[0][:,j])
                 probability_matrix[:,j] = prob[:,0]
-            for i in range(len(self.predict)):
-                self.predict[i,0] = np.argmax(probability_matrix[i,:])   
-            return self.predict 
+            for i in range(len(predict)):
+                predict[i,0] = np.argmax(probability_matrix[i,:])   
+            return predict 
+    def get_prob(self,x):
+        """
+        Gives the predicted probabilities(without rounding up the results) made by the IRLS algorithm.
+        Inputs:
+            x: float or array
+                input the array of input points or a single input point.
+        Returns:
+            predict: float or array
+                outputs the prediction(probability) made by the classification algorithm.       
+        """
+        ones = np.ones((len(x),1))
+        x = np.hstack((ones,x))
+        if self.k == 2:
+            predict = probability_vector(x,self.result[0])
+            return predict
+        else:
+            probability_matrix = np.zeros((len(x),self.k))
+            predict = np.zeros((len(x),1))
+            for j in range(self.k):
+                prob = probability_vector(x,self.result[0][:,j])
+                probability_matrix[:,j] = prob[:,0]
+            for i in range(len(predict)):
+                predict[i,0] = probability_matrix[i,np.argmax(probability_matrix[i,:])]   
+            return predict 
     def parameters(self):
         """
         Gives the parameters calculated by the classification function.
@@ -318,3 +320,4 @@ class IRLSClassifier:
         else:
             print("Please insert a valid error type.")
             return ValueError
+##############

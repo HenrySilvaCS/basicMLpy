@@ -182,8 +182,8 @@ class CrossValidation:
             self.error: float
                 Outputs the expected test error of the model.
         """
-        self.error = sum(self.scores)/self.n_folds
-        return self.error
+        error = sum(self.scores)/self.n_folds
+        return error
     def get_best_parameters(self):
         """
         Gives the best set of parameters based on the model that yielded the smallest cross-validation score.
@@ -195,4 +195,3 @@ class CrossValidation:
         index = np.argmin(error)
         return self.parameters[index]
 ###
-

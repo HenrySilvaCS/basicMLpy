@@ -36,7 +36,7 @@ def calculate_error(x,y,parameters):
     """
     prediction = (x @ parameters).reshape((np.size(x,0)),1)
     errors = np.square(prediction - y)
-    errors_sum = sum(errors)
+    errors_sum = np.sum(errors)
     return errors, errors_sum
 def linear_regression(x,y,tsize):
     """
@@ -188,16 +188,14 @@ def ridge_regression(x,y,const,tsize):
         else:
             huber_loss += 2 * delta * np.absolute(Y_test[i] - pred[i]) - delta**2
     return theta, mse, prediction, huber_loss
-def mse_and_huber(xtest,ytest,parameters):
+def mse_and_huber(prediction,ytest):
     """
     Calculates the Mean Squared Error and the Huber Loss of a given model w.r.t. the test dataset.
     Inputs:
-        xtest: array
-            input array of all points that constitute the input test dataset, without the intercept(raw data).
+        prediction: array
+            input array of predictions made by some algorithm.
         ytest: array
             input array of all points that constitute the output test dataset.
-        parameters: array
-            input array of parameters/predictors to be used in the prediction algorithm.
     Returns:
         mse: float
             outputs the Mean Squared Error w.r.t. the test set.
@@ -206,19 +204,16 @@ def mse_and_huber(xtest,ytest,parameters):
             
         
 """
-    ones = np.ones((len(xtest),1))
-    xtest = np.hstack((ones,xtest))
-    prediction = xtest @ parameters
-    error = sum(np.square(ytest - prediction))
+    error = np.sum(np.square(ytest - prediction))
     mse = error/len(ytest)
     huber_loss = 0
     delta = 0.5
-    for i in range(len(xtest)):
+    for i in range(len(ytest)):
         if np.absolute(ytest[i] - prediction[i] ) <= delta:
             huber_loss += np.square(ytest[i] - prediction[i])
         else:
             huber_loss += 2 * delta * np.absolute(ytest[i] - prediction[i]) - delta**2
-    return np.round(mse,2), np.round(huber_loss,2), prediction
+    return mse, huber_loss
 class LinearRegression:
     """
     Class of two different linear regression models.
@@ -270,11 +265,11 @@ class LinearRegression:
             self.predict: float or array
                 outputs the prediction made by the classification algorithm
         """
-        self.input = x  
-        ones = np.ones((len(self.input),1))
-        self.input = np.hstack((ones,self.input))
-        self.predict = self.input @ self.result[0]
-        return self.predict
+        inputx = x  
+        ones = np.ones((len(inputx),1))
+        inputx = np.hstack((ones,inputx))
+        predict = inputx @ self.result[0]
+        return predict
     def parameters(self):
         """
         Gives the parameters calculated by the regression function.
@@ -304,6 +299,9 @@ class LinearRegression:
             raise ValueError("Please insert a valid error type.")
 
 class BERegression:
+    """
+    Class of basis expanded regression models, that allow for nonlinear models.
+    """
     def __init__(self,btype,tsize=0.2):
         """
         Initialize self.
@@ -339,23 +337,22 @@ class BERegression:
             self.predict: float or array
                 outputs the prediction made by the classification algorithm
         """
-        self.input = x
-        self.input = x  
-        ones = np.ones((len(self.input),1))
-        self.input = np.hstack((ones,self.input)) 
-        x_new = np.zeros((self.input.shape))
+        inputx = x  
+        ones = np.ones((len(inputx),1))
+        inputx= np.hstack((ones,inputx)) 
+        x_new = np.zeros((inputx.shape))
         for i in range(len(x)):
-            x_new[i,:] = self.input[i,:]
+            x_new[i,:] = inputx[i,:]
         if self.btype == 'sqrt':
             for i in range(len(x_new)):
                 x_new[i,:] = np.sqrt(x_new[i,:])
         elif self.btype == 'poly':
-            for i in range(np.size(self.input,1)):
+            for i in range(np.size(inputx,1)):
                 x_new[:,i] = (x_new[:,i] ** i)
         else:
             raise ValueError("Enter a valid type of basis expansion") 
-        self.predict = self.predict = x_new @ self.result[0]
-        return self.predict
+        predict = x_new @ self.result[0]
+        return predict
     def parameters(self):
         """
         Gives the parameters calculated by the regression function.
