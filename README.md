@@ -13,6 +13,10 @@ basicMLpy is a package that implements simple machine learning algorithms. It cu
 ### The basicMLpy.cross_validation module contains the following functionalities:
 * A Cross-Validation algorithm for the functions presented by the basicMLpy package
 * Functions for model selection
+### The basicMLpy.ensemble module contains the following functionalities:
+* An implementation of the Random Forests algorithm for regression and classification
+* An implementation of the AdaBoost algorithm for classification
+* An implementation of the Gradient Boosting algorithm for regression
 ## Documentation <br />
 The documentation will be available at a proper site soon. For now it can be found in the main code for each module.<br />
 ## Installation <br />
