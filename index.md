@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/HenrySilvaCS/basicMLpy/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# The basicMLpy python package
+basicMLpy is a python package focused on implementing machine learning algorithms for supervised learning tasks. It currently has 5 fully functional modules, that provide implementations of various models for supervised learning, and also many functions for model selection and error evaluation.
+## About the creator
+I started this as a personnal project during my scientific research on machine learning and data science at the Federal University of Minas Gerais(UFMG), as a way to practice and get experience with the machine learning techniques that I am learning. I'm currently at the first semester of a 10-semester long Computer Science course, so I'm still new to coding and machine learning in general. With that in mind, this package isn't by any means meant to be on the same level of other big python packages for machine learning, such as scikitlearn or xgboost, it is built to at least have a comparable performance to the aforementioned packages when used to fit small to medium sized datasets. The package's functionalities are also easy-to-use and pretty intuitive, so it also provides a welcoming environment for newcomers.
+## Installation
+basicMLpy can be installed by downloading the latest official release. Currently the package is only available through the pip package.
+To install the latest version of basicMLpy, run the following command:
+```
+pip install -i https://test.pypi.org/simple/ basicMLpy
+```
+If you want to install a specific version, run the following:
+```
+pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
+```
+The source code for the latest version of the package is available at: https://github.com/HenrySilvaCS/basicMLpy<br />
+The source code for all the versions of the package is available at: https://test.pypi.org/project/basicMLpy/#history
+## Package features
+The package currently contains five different modules. Their functionalities are described below.
+### basicMLpy.regression module contains the following functionalities:
+* Linear Regression 
+* Ridge Regression 
+* Basis expanded regression, that allows for nonlinear models 
+* Error evaluation through Mean Squared Error and Huber Loss
+### basicMLpy.classification module contains the following functionalities:
+* Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
+* Error evaluation through accuracy and exponential loss
+### basicMLpy.nearest_neighbors module contains the following functionalities:
+* An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems
+### basicMLpy.cross_validation module contains the following functionalities:
+* A Cross-Validation algorithm for the functions presented by the basicMLpy package
+* Functions for model selection
+### basicMLpy.ensemble module contains the following functionalities:
+* An implementation of the Random Forests algorithm for regression and classification
+* An implementation of the AdaBoost algorithm for classification
+* An implementation of the Gradient Boosting algorithm for regression
+## User Guide and Documentation
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
 
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/HenrySilvaCS/basicMLpy/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
