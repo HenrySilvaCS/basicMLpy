@@ -15,24 +15,24 @@ pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
 The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
 The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)
 ## Package features
-The package currently contains five different modules. Their functionalities are described below.
+The package currently contains five different modules. Their functionalities are described below.<br />
 ### basicMLpy.regression module contains the following functionalities:
 * Linear Regression 
 * Ridge Regression 
 * Basis expanded regression, that allows for nonlinear models 
-* Error evaluation through Mean Squared Error and Huber Loss
+* Error evaluation through Mean Squared Error and Huber Loss<br />
 ### basicMLpy.classification module contains the following functionalities:
 * Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
-* Error evaluation through accuracy and exponential loss
+* Error evaluation through accuracy and exponential loss<br />
 ### basicMLpy.nearest_neighbors module contains the following functionalities:
-* An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems
+* An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems<br />
 ### basicMLpy.cross_validation module contains the following functionalities:
 * A Cross-Validation algorithm for the functions presented by the basicMLpy package
-* Functions for model selection
+* Functions for model selection<br />
 ### basicMLpy.ensemble module contains the following functionalities:
 * An implementation of the Random Forests algorithm for regression and classification
 * An implementation of the AdaBoost algorithm for classification
-* An implementation of the Gradient Boosting algorithm for regression
-
-  
+* An implementation of the Gradient Boosting algorithm for regression<br />
+#
+-> [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide)
   
