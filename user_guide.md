@@ -1,6 +1,3 @@
-layout: page
-title: "User Guide"
-permalink: /user-guide/
 # User Guide and Documentation
 This section will give a walkthrough on every model of the package.
 ## basicMLpy.regression
