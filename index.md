@@ -33,5 +33,5 @@ The package currently contains five different modules. Their functionalities are
 * An implementation of the Random Forests algorithm for regression and classification
 * An implementation of the AdaBoost algorithm for classification
 * An implementation of the Gradient Boosting algorithm for regression<br />
--> [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide)
+
   
