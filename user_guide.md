@@ -103,4 +103,4 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   >>>print(Y_test[0:5])
   [0,1,1,1,1]
   ```
-  ## basicMLpy.cross_validation
+ 
