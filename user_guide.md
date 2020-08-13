@@ -1,3 +1,4 @@
+[Home](https://henrysilvacs.github.io/basicMLpy/)  | [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide)
 # User Guide and Documentation
 This section will give a walkthrough on every model of the package.
 ## basicMLpy.regression
