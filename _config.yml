@@ -1,3 +1,5 @@
 theme: jekyll-theme-slate
 title: basicMLpy
-pages: [Home](https://henrysilvacs.github.io/basicMLpy/) [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide) 
+download: 
+  source: https://github.com/HenrySilvaCS/basicMLpy/blob/master/dist/basicMLpy-0.2.7.tar.gz
+
