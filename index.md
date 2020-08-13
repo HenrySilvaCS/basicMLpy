@@ -1,8 +1,8 @@
-# Introduction to the package<br />
+# Introduction to the package
 basicMLpy is a python package focused on implementing machine learning algorithms for supervised learning tasks. It currently has 5 fully functional modules, that provide implementations of various models for supervised learning, and also many functions for model selection and error evaluation.<br />
-## About the creator<br />
+## About the creator
 I started this as a personnal project during my scientific research on machine learning and data science at the Federal University of Minas Gerais(UFMG), as a way to practice and get experience with the machine learning techniques that I am learning. I'm currently at the first semester of a 10-semester long Computer Science course, so I'm still new to coding and machine learning in general. With that in mind, this package isn't by any means meant to be on the same level of other big python packages for machine learning, such as scikitlearn or xgboost, it is built to at least have a comparable performance to the aforementioned packages when used to fit small to medium sized datasets. The package's functionalities are also easy-to-use and pretty intuitive, so it also provides a welcoming environment for newcomers.<br />
-## Installation<br />
+## Installation
 basicMLpy can be installed by downloading the latest official release. Currently the package is only available through the pip package.<br />
 To install the latest version of basicMLpy, run the following command:<br />
 ```
@@ -15,7 +15,7 @@ pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
 The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
 The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)<br />
 <br />
-## Package features<br />
+## Package features
 The package currently contains five different modules. Their functionalities are described below.<br />
 <br />
 ### basicMLpy.regression module contains the following functionalities:
