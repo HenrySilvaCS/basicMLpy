@@ -15,7 +15,7 @@ pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
 The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
 The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)
 ## Package features
-The package currently contains five different modules. Their functionalities are described below.<br />
+The package currently contains five different modules. Their functionalities are described below:<br />
 ### basicMLpy.regression module contains the following functionalities:
 * Linear Regression 
 * Ridge Regression 
@@ -33,6 +33,5 @@ The package currently contains five different modules. Their functionalities are
 * An implementation of the Random Forests algorithm for regression and classification
 * An implementation of the AdaBoost algorithm for classification
 * An implementation of the Gradient Boosting algorithm for regression<br />
-#
 -> [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide)
   
