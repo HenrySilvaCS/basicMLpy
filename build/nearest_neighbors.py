@@ -75,6 +75,9 @@ class NearestNeighbors:
     Class of the K-Nearest Neighbors algorithm. 
     Fits both regression and classification problems.
     This algorithm performs a brute force search, meaning that it performs poorly on large datasets, since it scales according to O[DN^2], where N is the number of samples and D is the number of dimensions.
+    Methods:
+        predict(x,y) -> Predict value for X.
+        kneighbors(row_num,n_neighbors) -> Gets the k-nearest neighbors from x.
     """
     def __init__(self,n_neighbors = 5,weights = 'uniform'):
         """

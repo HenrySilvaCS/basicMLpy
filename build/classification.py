@@ -190,23 +190,30 @@ def acc_and_loss(prediction,ytest):
             outputs the approximate exponential loss of the model w.r.t. the test set.
         
     """
-    ytest = ytest.reshape((-1,1))
+    ytest_copy = ytest.reshape((-1,1))
+    prediction_copy = prediction.reshape((-1,1))
     counter = 0
-    for i in range(len(ytest)):
-        if np.absolute(ytest[i] - prediction[i]) == 0:
+    for i in range(len(ytest_copy)):
+        if np.absolute(ytest_copy[i] - prediction_copy[i]) == 0:
             counter = counter
         else:
             counter += 1
-    accuracy = ((len(ytest) - counter)/len(ytest)) * 100
+    accuracy = ((len(ytest_copy) - counter)/len(ytest_copy)) * 100
     exp_loss = 0
-    prediction_loss = prediction
-    for i in range(len(ytest)):
-        exp_loss += np.exp(-1 * ytest[i] * prediction_loss[i])
+    prediction_loss = prediction_copy
+    for i in range(len(ytest_copy)):
+        exp_loss += np.exp(-1 * ytest_copy[i] * prediction_loss[i])
     return accuracy, float(exp_loss)
 class IRLSClassifier:
     """
     Iteratively Reweighted Least Squares algorithmn for classification, that can solve both binary and multiclass problems.
-    Executes a given model based on user input.
+    Methods:
+        fit(X,y) -> Performs the IRLS algorithm on the training set(x,y).
+        predict(x) -> Predict the class for X.
+        get_prob -> Predict the probabilities for X.
+        parameters() -> Returns the calculated parameters for the linear model.
+        val_error(etype) -> Returns the validation error of the model.
+
     """
     def __init__(self,k,tsize = 0.2,n_iter=15):
         """
@@ -290,8 +297,8 @@ class IRLSClassifier:
                 prob = probability_vector(x,self.result[0][:,j])
                 probability_matrix[:,j] = prob[:,0]
             for i in range(len(predict)):
-                predict[i,0] = probability_matrix[i,np.argmax(probability_matrix[i,:])]   
-            return predict 
+                predict[i] = probability_matrix[i,np.argmax(probability_matrix[i,:])]   
+            return predict
     def parameters(self):
         """
         Gives the parameters calculated by the classification function.

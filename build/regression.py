@@ -217,7 +217,11 @@ def mse_and_huber(prediction,ytest):
 class LinearRegression:
     """
     Class of two different linear regression models.
-    Executes a given model based on user input.
+    Methods:
+        fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).
+        predict(x) -> Predict value for X.
+        parameters() -> Returns the calculated parameters for the linear model.
+        val_error(etype) -> Returns the validation error of the model.
     """
     def __init__(self, reg_type = 'standard',tsize = 0.2):
         """
@@ -301,6 +305,11 @@ class LinearRegression:
 class BERegression:
     """
     Class of basis expanded regression models, that allow for nonlinear models.
+    Methods:
+        fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).
+        predict(x) -> Predict value for X.
+        parameters() -> Returns the calculated parameters for the linear model.
+        val_error(etype) -> Returns the validation error of the model.
     """
     def __init__(self,btype,tsize=0.2):
         """
