@@ -12,26 +12,30 @@ If you want to install a specific version, run the following:<br />
 ```
 pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
 ```
+The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
+The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)<br />
+<br />
 ## Package features<br />
 The package currently contains five different modules. Their functionalities are described below.<br />
-### basicMLpy.regression module contains the following functionalities:<br />
+<br />
+### basicMLpy.regression module contains the following functionalities:
 * Linear Regression 
 * Ridge Regression 
 * Basis expanded regression, that allows for nonlinear models 
 * Error evaluation through Mean Squared Error and Huber Loss
 <br />
-### basicMLpy.classification module contains the following functionalities:<br />
+### basicMLpy.classification module contains the following functionalities:
 * Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
 * Error evaluation through accuracy and exponential loss
 <br />
-### basicMLpy.nearest_neighbors module contains the following functionalities:<br />
+### basicMLpy.nearest_neighbors module contains the following functionalities:
 * An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems
 <br />
-### basicMLpy.cross_validation module contains the following functionalities:<br />
+### basicMLpy.cross_validation module contains the following functionalities:
 * A Cross-Validation algorithm for the functions presented by the basicMLpy package
 * Functions for model selection
 <br />
-### basicMLpy.ensemble module contains the following functionalities:<br />
+### basicMLpy.ensemble module contains the following functionalities:
 * An implementation of the Random Forests algorithm for regression and classification
 * An implementation of the AdaBoost algorithm for classification
 * An implementation of the Gradient Boosting algorithm for regression
@@ -60,6 +64,7 @@ Class of two different linear regression models, namely Ordinary Least Squares r
   >>>import numpy as np
   >>>from sklearn.datasets import load_boston
   >>>from sklearn.model_selection import train_test_split
+  >>>from basicMLpy.regression import LinearRegression
   >>>X,y = load_boston(return_X_y=True)
   >>>X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size = 0.2, random_state=5)
   >>>model = LinearRegression()
@@ -83,3 +88,65 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
                 &nbsp;&nbsp;input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
             &nbsp;tsize: float,default=0.2<br />
                 &nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />**   
+               <br />
+**Methods:<br />        &nbsp;fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
+        &nbsp;predict(x) -> Predict value for X.<br /> 
+        &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br /> 
+        &nbsp;val_error(etype) -> Returns the validation error of the model.**<br /> 
+       <br />
+**Examples:**
+```python
+  >>>import numpy as np
+  >>>from sklearn.datasets import load_boston
+  >>>from sklearn.model_selection import train_test_split
+  >>>from basicMLpy.regression import BERegression
+  >>>X,y = load_boston(return_X_y=True)
+  >>>X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size = 0.2, random_state=5)
+  >>>model = BERegression('poly')
+  >>>model.fit(X_train,Y_train)
+  >>>print(model.val_error(etype='mse'))
+  36.726
+```
+<br />
+## basicMLpy.classification
+#### IRLSCLassifier
+```
+class basicMLpy.classification.IRLSCLassifier(k,tsize=0.2,n_iter=15)
+```
+Class of the Iteratively Reweighted Least Squares algorithmn for classification, that can solve both binary and multiclass problems.
+<br />
+**Parameters:<br /> 
+            &nbsp;k: int<br /> 
+                &nbsp;&nbsp;input the number k of classes associated with the classification task. <br /> 
+            &nbsp;tsize: float,default=0.2<br /> 
+                &nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set;<br /> 
+            &nbsp;n_iter: int,default=15<br /> 
+                &nbsp;&nbsp;Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence;**<br /> 
+                <br /> 
+**Methods:<br />
+        &nbsp;fit(X,y) -> Performs the IRLS algorithm on the training set(x,y).<br /> 
+        &nbsp;predict(x) -> Predict the class for X.<br /> 
+        &nbsp;get_prob -> Predict the probabilities for X.<br /> 
+        &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br /> 
+        &nbsp;val_error(etype) -> Returns the validation accuracy of the model.<br /> **
+        <br /> 
+**Examples:**
+```python
+  >>>import numpy as np
+  >>>from sklearn.model_selection import train_test_split
+  >>>from sklearn.datasets import load_breast_cancer
+  >>>from basicMLpy.classification import IRLSClassifier
+  >>>model = IRLSCLassifier(k=2)
+  >>>model.fit(X_train,Y_train)
+  >>>print(model.val_error(etype='acc'))
+  99.0 #99% acurracy on the training set
+  >>>predictions_class = model.predict(X_test)
+  >>>print(predictions_class[0:5])
+  [0,1,1,1,1]
+  >>>print(Y_test[0:5])
+  [0,1,1,1,1]
+  ```
+  <br />
+  ## basicMLpy.cross_validation
+  
+  
