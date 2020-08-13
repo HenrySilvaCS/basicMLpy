@@ -100,7 +100,6 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
   >>>print(model.val_error(etype='mse'))
   36.726
 ```
-<br />
 ## basicMLpy.classification
 #### IRLSCLassifier
 ```
@@ -139,7 +138,6 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   >>>print(Y_test[0:5])
   [0,1,1,1,1]
   ```
-  <br />
   ## basicMLpy.cross_validation
   
   
