@@ -16,17 +16,12 @@ pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
 The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
 The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)
 ## Package features
-The package currently contains five different modules. Their functionalities are described below:<br />
-### | basicMLpy.regression module contains the following functionalities:
-* Linear Regression 
-* Ridge Regression 
-* Basis expanded regression, that allows for nonlinear models 
-* Error evaluation through Mean Squared Error and Huber Loss<br />
+The package currently contains five different modules. Their functionalities are described below:
 ### | basicMLpy.classification module contains the following functionalities:
 * Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
-* Error evaluation through accuracy and exponential loss<br />
+* Error evaluation through accuracy and exponential loss
 ### | basicMLpy.nearest_neighbors module contains the following functionalities:
-* An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems<br />
+* An implementation of the K-Nearest Neighbors algorithm, that can fit both classification and regression problems
 ### | basicMLpy.cross_validation module contains the following functionalities:
 * A Cross-Validation algorithm for the functions presented by the basicMLpy package
 * Functions for model selection<br />
