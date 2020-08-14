@@ -20,7 +20,6 @@ Class of two different linear regression models, namely Ordinary Least Squares r
          <br />
   **Examples:**
   ```python
-  >>>import numpy as np
   >>>from sklearn.datasets import load_boston
   >>>from sklearn.model_selection import train_test_split
   >>>from basicMLpy.regression import LinearRegression
@@ -55,7 +54,6 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
        <br />
 **Examples:**
 ```python
-  >>>import numpy as np
   >>>from sklearn.datasets import load_boston
   >>>from sklearn.model_selection import train_test_split
   >>>from basicMLpy.regression import BERegression
@@ -90,7 +88,6 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
         <br />
 **Examples**:
 ```python
-  >>>import numpy as np
   >>>from sklearn.model_selection import train_test_split
   >>>from sklearn.datasets import load_breast_cancer
   >>>from basicMLpy.classification import IRLSClassifier
