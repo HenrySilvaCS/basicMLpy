@@ -24,11 +24,11 @@ To install basicMLpy run the following command: <br />
 `pip install -i https://test.pypi.org/simple/ basicMLpy` <br />
 ## Dependencies <br />
 basicMLpy requires Python >= 3.8, Numpy >= 1.19, scikit-learn >= 0.23. <br />
-## On Github pages<br /> 
+## On GitHub Pages<br /> 
 https://henrysilvacs.github.io/basicMLpy/
 ## On pypi <br />
 https://test.pypi.org/project/basicMLpy/<br />
-## On Github <br />
+## On GitHub <br />
 https://github.com/HenrySilvaCS/basicMLpy
 ## Some thoughts <br />
 This is a work in progress project, so more functionalities will be added with time. The main feature that will be implemented in the near future is  a module focused on kernel density estimators.
