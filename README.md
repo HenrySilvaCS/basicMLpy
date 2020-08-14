@@ -18,12 +18,14 @@ basicMLpy is a package that implements simple machine learning algorithms. It cu
 * An implementation of the AdaBoost algorithm for classification
 * An implementation of the Gradient Boosting algorithm for regression
 ## Documentation <br />
-The documentation will be available at a proper site soon. For now it can be found in the main code for each module.<br />
+The documentation is available at: https://henrysilvacs.github.io/basicMLpy/<br />
 ## Installation <br />
 To install basicMLpy run the following command: <br />
 `pip install -i https://test.pypi.org/simple/ basicMLpy` <br />
 ## Dependencies <br />
 basicMLpy requires Python >= 3.8, Numpy >= 1.19, scikit-learn >= 0.23. <br />
+## On github pages<br /> 
+https://henrysilvacs.github.io/basicMLpy/
 ## On pypi <br />
 https://test.pypi.org/project/basicMLpy/<br />
 ## On Github <br />
