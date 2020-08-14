@@ -17,7 +17,7 @@ The source code for the latest version of the package is available [Here](https:
 The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)
 ## Package features
 The package currently contains five different modules. Their functionalities are described below:
-### | &nbsp;basicMLpy.classification module contains the following functionalities:
+### | basicMLpy.classification module contains the following functionalities:
 * Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
 * Error evaluation through accuracy and exponential loss
 ### | basicMLpy.nearest_neighbors module contains the following functionalities:
