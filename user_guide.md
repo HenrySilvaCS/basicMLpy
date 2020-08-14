@@ -35,7 +35,7 @@ Class of two different linear regression models, namely Ordinary Least Squares r
   >>>print(Y_test[0])
   37.6
   ```
-  #### BERegression
+#### BERegression
   ```
   class basicMLpy.regression.BERegression(btype,tsize=0.2)
   ```
