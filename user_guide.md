@@ -1,4 +1,4 @@
-[Home](https://henrysilvacs.github.io/basicMLpy/)  | [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide)
+[Home](https://henrysilvacs.github.io/basicMLpy/)  | [Install](https://henrysilvacs.github.io/basicMLpy/install) | [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide) | [About the author](https://henrysilvacs.github.io/basicMLpy/about)
 # User Guide and Documentation
 This section will give a walkthrough on every model of the package.
 ## basicMLpy.regression
@@ -101,4 +101,9 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   >>>print(Y_test[0:5])
   [0,1,1,1,1]
   ```
+ ## basicMLpy.classification
+ #### CrossValidate
+ ```
+ 
+ ```
  
