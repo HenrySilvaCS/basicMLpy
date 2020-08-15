@@ -1,18 +1,6 @@
-[Home](https://henrysilvacs.github.io/basicMLpy/)  | [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide)
+[Home](https://henrysilvacs.github.io/basicMLpy/)  | [Install](https://henrysilvacs.github.io/basicMLpy/install) | [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide) | [About the author](https://henrysilvacs.github.io/basicMLpy/about)
 # Introduction to the package
 basicMLpy is a python package focused on implementing machine learning algorithms for supervised learning tasks. It currently has 5 fully functional modules, that provide implementations of various models for supervised learning, and also many functions for model selection and error evaluation.
-## Installation
-basicMLpy can be installed by downloading the latest official release. Currently the package is only available through the pip package.<br />
-To install the latest version of basicMLpy, run the following command:<br />
-```
-pip install -i https://test.pypi.org/simple/ basicMLpy
-```
-If you want to install a specific version, run the following:<br />
-```
-pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
-```
-The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
-The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)
 ## Package features
 The package currently contains five different modules. Their functionalities are described below:
 ### | basicMLpy.classification module contains the following functionalities:
