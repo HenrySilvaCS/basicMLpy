@@ -1,5 +1,4 @@
 theme: jekyll-theme-slate
 title: basicMLpy
 description: Python package for Machine Learning
-url: "https://basicMLpy.github.io"
 markdown: kramdown
