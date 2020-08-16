@@ -7,6 +7,6 @@ I still intend to keep on working with basicMLpy all throughout my CS course, an
 Thank you for checking out basicMLpy! Any suggestions or ideas can be sent to my professional email listed below.
 * Email for contact: henriquesoares@dcc.ufmg.br<br />
 Social Media:
-* My [LinkedIn](https://www.linkedin.com/in/henrique-soares-b478841a2/?locale=en_US)
-* My [GitHub](https://github.com/HenrySilvaCS)
-* My [Twitter](https://twitter.com/vaitomarnomidia)
+* [LinkedIn](https://www.linkedin.com/in/henrique-soares-b478841a2/?locale=en_US)
+* [GitHub](https://github.com/HenrySilvaCS)
+* [Twitter](https://twitter.com/vaitomarnomidia)
