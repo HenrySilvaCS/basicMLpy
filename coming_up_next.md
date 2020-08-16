@@ -3,6 +3,7 @@
 Here are some features and algorithms that I intend to implement on future iterations of basicMLpy:
 Features | Already available ? | When? |
 ---------|---------------------|------|
+<br />
 Ensemble Module| Yes| v0.2.7 |
 Gradient Booster for Classification | No | Soon |
 From Scratch Decision Tree algorithm | No | ? |
