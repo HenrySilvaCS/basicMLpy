@@ -77,7 +77,7 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
                 &nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set;<br /> 
             &nbsp;n_iter: int,default=15<br /> 
                 &nbsp;&nbsp;Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence;<br /> 
-                <br /> 
+       
 **Methods:**<br />
         &nbsp;fit(X,y) -> Performs the IRLS algorithm on the training set(x,y).<br /> 
         &nbsp;predict(x) -> Predict the class for X.<br /> 
