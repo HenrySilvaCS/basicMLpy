@@ -7,17 +7,14 @@ This section will give a walkthrough on every model of the package.
 class basicMLpy.regression.LinearRegression(reg_type = 'standard',tsize = 0.2)
 ```
 Class of two different linear regression models, namely Ordinary Least Squares regression and Ridge Regression(L2 regularized regression).<br />
-<br />
 **Parameters:**<br />  &nbsp;reg_type: string,default='standard'<br />
                &nbsp;&nbsp;input string that identifies the type of regression; reg_type can be: 'standard'(standard linear regression) or 'ridge'(ridge regression);<br />
                &nbsp;tsize: float,default=0.2<br />
                &nbsp;&nbsp;input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />
-               <br />
 **Methods:**<br />          &nbsp;fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br />
          &nbsp;predict(x) -> Predict value for X.<br />
          &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br />
          &nbsp;val_error(etype) -> Returns the validation error of the model.<br />
-         <br />
   **Examples:**
   ```python
   >>>from sklearn.datasets import load_boston
@@ -40,7 +37,6 @@ Class of two different linear regression models, namely Ordinary Least Squares r
   class basicMLpy.regression.BERegression(btype,tsize=0.2)
   ```
 Class of basis expanded regression models, that allow for nonlinearity.<br />
-<br />
 **Parameters**:<br /> 
             &nbsp;btype: string<br />
                 &nbsp;&nbsp;input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
@@ -51,7 +47,6 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
         &nbsp;predict(x) -> Predict value for X.<br /> 
         &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br /> 
         &nbsp;val_error(etype) -> Returns the validation error of the model.<br /> 
-       <br />
 **Examples:**
 ```python
   >>>from sklearn.datasets import load_boston
