@@ -3,9 +3,8 @@ title: basicMLpy
 description: Python package for Machine Learning
 markdown: kramdown
 highlighter: rouge
-pages:
-- Home: index.md
-- Install: install.md
-- User Guide: user_guide.md
-- Coming up: coming_up_next.md
-- About: about.md
+navigation: 
+ - title: Home
+   url: /index.md
+ - title: Install
+   url: /install
