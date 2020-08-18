@@ -94,8 +94,8 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   >>>print(Y_test[0:5])
   [0,1,1,1,1]
   ```
- ## basicMLpy.ensemble
- ### RandomForestRegressor
+## basicMLpy.ensemble
+### RandomForestRegressor
  ```python
  class basicMLpy.ensemble.RandomForestRegressor(n_estimators,max_features =1/3,max_depth=None,criterion='mse',random_state=None)
  ```
