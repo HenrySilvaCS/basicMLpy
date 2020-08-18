@@ -2,6 +2,7 @@ theme: jekyll-theme-slate
 title: basicMLpy
 description: Python package for Machine Learning
 markdown: kramdown
+highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
   input: GFM
