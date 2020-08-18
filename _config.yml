@@ -3,8 +3,3 @@ title: basicMLpy
 description: Python package for Machine Learning
 markdown: kramdown
 highlighter: rouge
-navigation: 
- - title: Home
-   url: https://henrysilvacs.github.io/basicMLpy/
- - title: Install
-   url: https://henrysilvacs.github.io/basicMLpy/install
