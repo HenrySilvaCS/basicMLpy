@@ -9,16 +9,17 @@ class basicMLpy.regression.LinearRegression(reg_type = 'standard',tsize = 0.2)
 Class of two different linear regression models, namely Ordinary Least Squares regression and Ridge Regression(L2 regularized regression).<br />
 
 
-**Parameters:**<br />  &nbsp;reg_type: string,default='standard'<br />
-               &nbsp;&nbsp;input string that identifies the type of regression; reg_type can be: 'standard'(standard linear regression) or 'ridge'(ridge regression);<br />
-               &nbsp;tsize: float,default=0.2<br />
-               &nbsp;&nbsp;input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />
+**Parameters:**<br />
+reg_type: string,default='standard'<br />
+               input string that identifies the type of regression; reg_type can be: 'standard'(standard linear regression) or 'ridge'(ridge regression);<br />
+               tsize: float,default=0.2<br />
+               input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />
                
                
-**Methods:**<br />          &nbsp;fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br />
-         &nbsp;predict(x) -> Predict value for X.<br />
-         &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br />
-         &nbsp;val_error(etype) -> Returns the validation error of the model.<br />
+**Methods:**<br />          fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br />
+         predict(x) -> Predict value for X.<br />
+         parameters() -> Returns the calculated parameters for the linear model.<br />
+         val_error(etype) -> Returns the validation error of the model.<br />
          
          
   **Examples:**
@@ -48,17 +49,17 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
 
 
 **Parameters**:<br /> 
-            &nbsp;btype: string<br />
-                &nbsp;&nbsp;input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
-            &nbsp;tsize: float,default=0.2<br />
-                &nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />  
+            btype: string<br />
+                input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
+            tsize: float,default=0.2<br />
+                Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />  
                <br />
                
                
-**Methods:**<br />        &nbsp;fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
-        &nbsp;predict(x) -> Predict value for X.<br /> 
-        &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br /> 
-        &nbsp;val_error(etype) -> Returns the validation error of the model.<br /> 
+**Methods:**<br />        fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
+        predict(x) -> Predict value for X.<br /> 
+        parameters() -> Returns the calculated parameters for the linear model.<br /> 
+        val_error(etype) -> Returns the validation error of the model.<br /> 
         
         
 **Examples:**
@@ -84,20 +85,20 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
 
 
 **Parameters:**:<br /> 
-            &nbsp;k: int<br /> 
-                &nbsp;&nbsp;input the number k of classes associated with the classification task. <br /> 
-            &nbsp;tsize: float,default=0.2<br /> 
-                &nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set;<br /> 
-            &nbsp;n_iter: int,default=15<br /> 
-                &nbsp;&nbsp;Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence;<br /> 
+            k: int<br /> 
+                input the number k of classes associated with the classification task. <br /> 
+            tsize: float,default=0.2<br /> 
+                Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set;<br /> 
+            n_iter: int,default=15<br /> 
+                Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence;<br /> 
        
        
 **Methods:**<br />
-        &nbsp;fit(X,y) -> Performs the IRLS algorithm on the training set(x,y).<br /> 
-        &nbsp;predict(x) -> Predict the class for X.<br /> 
-        &nbsp;get_prob -> Predict the probabilities for X.<br /> 
-        &nbsp;parameters() -> Returns the calculated parameters for the linear model.<br /> 
-        &nbsp;val_error(etype) -> Returns the validation accuracy of the model.<br />
+        fit(X,y) -> Performs the IRLS algorithm on the training set(x,y).<br /> 
+        predict(x) -> Predict the class for X.<br /> 
+        get_prob -> Predict the probabilities for X.<br /> 
+        parameters() -> Returns the calculated parameters for the linear model.<br /> 
+        val_error(etype) -> Returns the validation accuracy of the model.<br />
         
         
 **Examples:**
@@ -126,21 +127,21 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
  
  
  **Parameters:**<br /> 
-            &nbsp;n_estimators: int<br />
-                &nbsp;&nbsp;input the number of trees to grow.<br />
-            &nbsp;max_depth: int, default=None<br />
-                &nbsp;&nbsp;input the maximum depth of the tree; <br />
-            &nbsp;criterion: string, default = 'mse'<br />
-                &nbsp;&nbsp;input string that identifies the criterion to be used when deciding how to split each node. criterion can be: 'mse', 'friedman_mse' and 'mae' .<br />
-            &nbsp;max_features : string or int/float, default = 1/3<br />
-                &nbsp;&nbsp;input string or int/float that identifies the maximum number of features to be used when splitting each decision tree; if string can be: 'sqrt' or 'log2'; if int max_fetures will be the maximum number of features; if float the maximum number of features will be int(max_features * n_features);<br />             
-            &nbsp;random_state: int, default = None<br />
-                &nbsp;&nbsp;input the random_state to be used on the sklearn DecisionTreeClassifier.<br /> 
+            n_estimators: int<br />
+                input the number of trees to grow.<br />
+            max_depth: int, default=None<br />
+                &nbsp;input the maximum depth of the tree; <br />
+            criterion: string, default = 'mse'<br />
+                input string that identifies the criterion to be used when deciding how to split each node. criterion can be: 'mse', 'friedman_mse' and 'mae' .<br />
+            max_features : string or int/float, default = 1/3<br />
+                input string or int/float that identifies the maximum number of features to be used when splitting each decision tree; if string can be: 'sqrt' or 'log2'; if int max_fetures will be the maximum number of features; if float the maximum number of features will be int(max_features * n_features);<br />             
+            random_state: int, default = None<br />
+                input the random_state to be used on the sklearn DecisionTreeClassifier.<br /> 
                 
                 
 **Methods:**<br />
-        &nbsp;fit(X,y) -> Performs the random forests algorithm on the training set(x,y).<br />
-        &nbsp;predict(x) -> Predict regression value for X.<br />
+        fit(X,y) -> Performs the random forests algorithm on the training set(x,y).<br />
+        predict(x) -> Predict regression value for X.<br />
         
         
  **Examples:**
@@ -166,23 +167,23 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
  
  
  **Parameters:**<br /> 
-             &nbsp;n_estimators: int<br /> 
-                &nbsp;&nbsp;input the number of trees to grow.<br /> 
-            &nbsp;n_classes: int<br /> 
-                &nbsp;&nbsp;input the number of classes of the classification task.<br /> 
-            &nbsp;max_depth: int, default = None<br /> 
-                &nbsp;&nbsp;input the maximum depth of the tree; <br /> 
-            &nbsp;criterion: string, default = 'gini'<br /> 
-                &nbsp;&nbsp;input string that identifies the criterion to be used when deciding how to split each node. criterion can be: 'gini' or 'entropy' .<br /> 
-            &nbsp;max_features : string or int/float, default = 'sqrt'<br /> 
-                &nbsp;&nbsp;input string or int/float that identifies the maximum number of features to be used when splitting each decision tree; if string can be: 'sqrt' or 'log2'; if int max_fetures will be the maximum number of features; if float the maximum number of features will be int(max_features * n_features); <br />                    
-            &nbsp;random_state: int,default = None<br /> 
-                &nbsp;&nbsp;input the random_state to be used on the sklearn DecisionTreeClassifier.<br /> 
+             n_estimators: int<br /> 
+                input the number of trees to grow.<br /> 
+            n_classes: int<br /> 
+                input the number of classes of the classification task.<br /> 
+            max_depth: int, default = None<br /> 
+                input the maximum depth of the tree; <br /> 
+            criterion: string, default = 'gini'<br /> 
+                input string that identifies the criterion to be used when deciding how to split each node. criterion can be: 'gini' or 'entropy' .<br /> 
+            max_features : string or int/float, default = 'sqrt'<br /> 
+                input string or int/float that identifies the maximum number of features to be used when splitting each decision tree; if string can be: 'sqrt' or 'log2'; if int max_fetures will be the maximum number of features; if float the maximum number of features will be int(max_features * n_features); <br />                    
+            random_state: int,default = None<br /> 
+                input the random_state to be used on the sklearn DecisionTreeClassifier.<br /> 
                 
                 
 **Methods:**<br />
-        &nbsp;fit(X,y) -> Performs the random forests algorithm on the training set(x,y).<br />
-        &nbsp;predict(x) -> Predict regression value for X.<br />   
+        fit(X,y) -> Performs the random forests algorithm on the training set(x,y).<br />
+        predict(x) -> Predict regression value for X.<br />   
         
         
   **Examples:**
@@ -208,19 +209,19 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
  
  
 **Parameters:**<br /> 
-            &nbsp;n_folds: int<br />
-                &nbsp;&nbsp;input number of folds to be created. must be bigger than two.<br />
-            &nbsp;function: string<br />
-                &nbsp;&nbsp;input string that identifies the function to use in the cross-validation algorithm; function can be: 'LinearRegression', 'RidgeRegression', 'BERegression', 'IRLSClassifier','RandomForestClassifier","RandomForestRegressor","AdaBoostClassifier" and "GBRegressor".<br />
-            &nbsp;** kwargs: dict <br />
-                &nbsp;&nbsp;input specific parameters for the respective function.<br />
+            n_folds: int<br />
+                input number of folds to be created. must be bigger than two.<br />
+           function: string<br />
+                input string that identifies the function to use in the cross-validation algorithm; function can be: 'LinearRegression', 'RidgeRegression', 'BERegression', 'IRLSClassifier','RandomForestClassifier","RandomForestRegressor","AdaBoostClassifier" and "GBRegressor".<br />
+            ** kwargs: dict <br />
+                input specific parameters for the respective function.<br />
                 
                 
 **Methods:**<br />
-         &nbsp;fit(X,y) -> Performs the cross validation algorithm on the training set(x,y).<br />
-         &nbsp;cv_scores() -> Gives the cross validation scores for the training set.<br />
-         &nbsp;expected_generalization_error() -> Gives the predicted generalization(out of sample) test error.<br />
-         &nbsp;get_best_parameters() -> Returns the parameters that correspond to the model with lowest cv score; only works for the models of basicMLpy.regression and basicMLpy.classification.<br />
+         fit(X,y) -> Performs the cross validation algorithm on the training set(x,y).<br />
+         cv_scores() -> Gives the cross validation scores for the training set.<br />
+         expected_generalization_error() -> Gives the predicted generalization(out of sample) test error.<br />
+         get_best_parameters() -> Returns the parameters that correspond to the model with lowest cv score; only works for the models of basicMLpy.regression and basicMLpy.classification.<br />
          
          
 **Examples:**
