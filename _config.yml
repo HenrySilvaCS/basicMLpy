@@ -5,6 +5,6 @@ markdown: kramdown
 highlighter: rouge
 navigation: 
  - title: Home
-   url: /index.md
+   url: https://henrysilvacs.github.io/basicMLpy/
  - title: Install
-   url: /install
+   url: https://henrysilvacs.github.io/basicMLpy/install
