@@ -31,6 +31,7 @@
   >>>print(np.round(mse_and_huber(model.predict(X_test),Y_test)[0],3)) #gets the mse
   12.893
  ```
+ 
  ### RandomForestClassifier
  ```python
  class basicMLpy.ensemble.RandomForestRegressor(n_estimators,n_classes,max_depth=None,criterion='gini',random_state=None,max_features='sqrt')
@@ -46,7 +47,7 @@
             &nbsp;criterion: string, default = 'gini'<br /> 
                 &nbsp;&nbsp;input string that identifies the criterion to be used when deciding how to split each node. criterion can be: 'gini' or 'entropy' .<br /> 
             &nbsp;max_features : string or int/float, default = 'sqrt'<br /> 
-                &nbsp;&nbsp;input string or int/float that identifies the maximum number of features to be used when splitting each decision tree; if string can be: 'sqrt' or 'log2'; if int max_fetures will be the maximum number of features; if float the maximum number of features will be int(max_features * n_features); <br />                    
+                &nbsp;&nbsp;input string or int/float that identifies the maximum number of features to be used when splitting each decision tree; if string can be: 'sqrt' or 'log2'; if int max_fetures will be the maximum number of features; if float the maximum number of features will be int(max_features * n_features);<br />                    
             &nbsp;random_state: int,default = None<br /> 
                 &nbsp;&nbsp;input the random_state to be used on the sklearn DecisionTreeClassifier.<br /> 
 **Methods:**<br />
@@ -64,9 +65,7 @@
   >>>print(np.round(bpc.acc_and_loss(model.predict(X_test),Y_test)[0],3)) #gets the accuracy in %
   >>>95.614 #accuracy of the model
   ```
-  
-  
-  
+
  ## basicMLpy.cross_validation
  #### CrossValidation
  ```python
