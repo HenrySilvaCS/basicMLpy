@@ -112,7 +112,6 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   >>>print(Y_test[0:5])
   [0,1,1,1,1]
   ```
-  
 ## basicMLpy.ensemble
 #### RandomForestRegressor
 ```python
@@ -193,7 +192,6 @@ Class of the Random Forest Classifier Model.<br />
  >>>print(np.round(bpc.acc_and_loss(model.predict(X_test),Y_test)[0],3)) #gets the accuracy in %
  >>>95.614 #accuracy of the model
  ```
- 
 ## basicMLpy.cross_validation
 #### CrossValidation
  ```python
