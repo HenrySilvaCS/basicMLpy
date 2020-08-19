@@ -8,9 +8,9 @@ Class of two different linear regression models, namely Ordinary Least Squares r
 
 **Parameters:**<br />
 reg_type: string,default='standard'<br />
-               input string that identifies the type of regression; reg_type can be: 'standard'(standard linear regression) or 'ridge'(ridge regression);<br />
+               &nbsp;&nbsp;&nbsp;input string that identifies the type of regression; reg_type can be: 'standard'(standard linear regression) or 'ridge'(ridge regression);<br />
                tsize: float,default=0.2<br />
-               input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />
+               &nbsp;&nbsp;&nbsp;input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />
                
                
 **Methods:**<br />          fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br />
@@ -47,9 +47,9 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
 
 **Parameters**:<br /> 
             btype: string<br />
-                input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
+                &nbsp;&nbsp;&nbsp;input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
             tsize: float,default=0.2<br />
-                Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />  
+                &nbsp;&nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />  
                <br />
                
                
