@@ -81,7 +81,7 @@ Class of the Random Forest Classifier Model.<br />
  ```
  
  
- #### AdaBoostClassifier
+#### AdaBoostClassifier
  ```python
  class basicMLpy.ensemble.AdaBoostClassifier(n_estimators)
  ```
