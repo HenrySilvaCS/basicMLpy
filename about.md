@@ -5,7 +5,9 @@ I started this package as a personnal project during my scientific research on m
 I still intend to keep on working with basicMLpy all throughout my CS course, and so there's still room for improvement and a lot of things that I want and will implement on the near future. However, for now this package is only a personnal exercise on coding and machine learning , but maybe that will change with time and this project will become something bigger and more robust.
 ## Contact & Info
 Thank you for checking out basicMLpy! Any suggestions or ideas can be sent to my professional email listed below.
-* Email for contact: henriquesoares@dcc.ufmg.br<br />
+* Email for contact: henriquesoares@dcc.ufmg.br
+
+
 Social Media:
 * [LinkedIn](https://www.linkedin.com/in/henrique-soares-b478841a2/?locale=en_US)
 * [GitHub](https://github.com/HenrySilvaCS)
