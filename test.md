@@ -1,4 +1,4 @@
-# basicMLpy.regression
+## basicMLpy.regression
 #### LinearRegression
 ```python
 class basicMLpy.regression.LinearRegression(reg_type = 'standard',tsize = 0.2)
@@ -72,7 +72,7 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
   36.726
 ```
 
-# basicMLpy.classification
+## basicMLpy.classification
 #### IRLSCLassifier
 ```python
 class basicMLpy.classification.IRLSCLassifier(k,tsize=0.2,n_iter=15)
@@ -113,7 +113,7 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   [0,1,1,1,1]
   ```
   
-  # basicMLpy.ensemble
+## basicMLpy.ensemble
 #### RandomForestRegressor
 ```python
 class basicMLpy.ensemble.RandomForestRegressor(n_estimators,max_features =1/3,max_depth=None,criterion='mse',random_state=None)
@@ -194,7 +194,7 @@ Class of the Random Forest Classifier Model.<br />
  >>>95.614 #accuracy of the model
  ```
  
- # basicMLpy.cross_validation
+## basicMLpy.cross_validation
 #### CrossValidation
  ```python
  class basicMLpy.cross_validation.CrossValidation(n_folds,function,**kwargs)
