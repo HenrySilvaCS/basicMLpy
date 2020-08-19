@@ -19,8 +19,7 @@
          fit(X,y) -> Performs the cross validation algorithm on the training set(x,y).<br />
          cv_scores() -> Gives the cross validation scores for the training set.<br />
          expected_generalization_error() -> Gives the predicted generalization(out of sample) test error.<br />
-         get_best_parameters() -> Returns the parameters that correspond to the model with lowest cv score; only works for the models of basicMLpy.regression and basicMLpy.classification.<br />
-
+         get_best_parameters() -> Returns the parameters that correspond to the model with lowest cv score; only works for the models of basicMLpy.regression and basicMLpy.classification.
 
 **Examples:**
 ```python
