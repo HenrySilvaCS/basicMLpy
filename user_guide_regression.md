@@ -50,8 +50,9 @@ Class of basis expanded regression models, that allow for nonlinearity.<br />
             btype: string<br />
                 &nbsp;&nbsp;&nbsp;input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
             tsize: float,default=0.2<br />
-                &nbsp;&nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />     
-       **Methods:**<br />        fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
+                &nbsp;&nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;            
+      <br /> **Methods:**  
+        fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
         predict(x) -> Predict value for X.<br /> 
         parameters() -> Returns the calculated parameters for the linear model.<br /> 
         val_error(etype) -> Returns the validation error of the model.<br /> 
