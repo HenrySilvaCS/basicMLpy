@@ -11,13 +11,13 @@ Class of two different linear regression models, namely Ordinary Least Squares r
 reg_type: string,default='standard'<br />
                &nbsp;&nbsp;&nbsp;input string that identifies the type of regression; reg_type can be: 'standard'(standard linear regression) or 'ridge'(ridge regression);<br />
                tsize: float,default=0.2<br />
-               &nbsp;&nbsp;&nbsp;input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;<br />
+               &nbsp;&nbsp;&nbsp;input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;
                
                
 **Methods:**<br />          fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br />
          predict(x) -> Predict value for X.<br />
          parameters() -> Returns the calculated parameters for the linear model.<br />
-         val_error(etype) -> Returns the validation error of the model.<br />
+         val_error(etype) -> Returns the validation error of the model.
          
          
   **Examples:**
@@ -43,21 +43,22 @@ reg_type: string,default='standard'<br />
   ```python
   class basicMLpy.regression.BERegression(btype,tsize=0.2)
   ```
-Class of basis expanded regression models, that allow for nonlinearity.<br />
+Class of basis expanded regression models, that allow for nonlinearity.
 
 
 **Parameters**:<br /> 
             btype: string<br />
                 &nbsp;&nbsp;&nbsp;input string that identifies the type of basis expansion; btype can be: 'sqrt'(square root expanded regression) or 'poly'(polynomial expanded regression).<br />
             tsize: float,default=0.2<br />
-                &nbsp;&nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;            
-      <br /> **Methods:**  
-        fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
-        predict(x) -> Predict value for X.<br /> 
-        parameters() -> Returns the calculated parameters for the linear model.<br /> 
-        val_error(etype) -> Returns the validation error of the model.<br /> 
-        
-        
+                &nbsp;&nbsp;&nbsp;Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used on the validation set;  
+    
+    
+ **Methods:**  
+  fit(X,y) -> Performs the linear regression algorithm on the training set(x,y).<br /> 
+  predict(x) -> Predict value for X.<br /> 
+  parameters() -> Returns the calculated parameters for the linear model.<br /> 
+  val_error(etype) -> Returns the validation error of the model.
+
 **Examples:**
 ```python
   >>>from sklearn.datasets import load_boston
