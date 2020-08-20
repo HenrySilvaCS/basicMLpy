@@ -15,6 +15,7 @@ The source code for all the versions of the package is available [Here](https://
 basicMLpy requires:<br />
 * Python (>= 3.8); Download python [here](https://www.python.org/downloads/release/python-380/)
 * Numpy (>= 1.19); Download numpy [here](https://numpy.org/install/)
-* Scikit learn(>= 0.23); Download sklearn [here](https://scikit-learn.org/stable/install.html)<br />
-<br />
+* Scikit learn(>= 0.23); Download sklearn [here](https://scikit-learn.org/stable/install.html)
+
+
 The package's source code is all written in python. Numpy was used mainly for it's mathematical functions and it's array functionalities. Scikitlearn was used mainly for it's train-test split function, and also for it's Decision Tree class.
