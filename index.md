@@ -2,7 +2,7 @@
 # Introduction to the package
 basicMLpy is a python package focused on implementing machine learning algorithms for supervised learning tasks. It currently has 5 fully functional modules, that provide implementations of various models for supervised learning, and also many functions for model selection and error evaluation.
 ## Package features
-The package currently contains five different modules. Their functionalities are described below:
+The package currently contains five different modules. Their contents are described below.
 
 
 ### basicMLpy.regression module contains the following functionalities:
