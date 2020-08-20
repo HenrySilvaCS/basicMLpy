@@ -5,6 +5,13 @@ basicMLpy is a python package focused on implementing machine learning algorithm
 The package currently contains five different modules. Their functionalities are described below:
 
 
+### The basicMLpy.regression module contains the following functionalities:
+* Linear Regression 
+* Ridge Regression 
+* Basis expanded regression, that allows for nonlinear models 
+* Error evaluation through Mean Squared Error and Huber Loss
+
+
 ### basicMLpy.classification module contains the following functionalities:
 * Multiclass classification through the IRLS(Iteratively Reweighted Least Squares) algorithm
 * Error evaluation through accuracy and exponential loss
