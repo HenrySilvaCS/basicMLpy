@@ -77,7 +77,7 @@ Class of the Random Forest Classifier Model.<br />
  >>>model = RandomForestClassifier(n_estimators = 100, n_classes = 2)
  >>>model.fit(X_train,Y_train)
  >>>print(np.round(bpc.acc_and_loss(model.predict(X_test),Y_test)[0],3)) #gets the accuracy in %
- >>>95.614 #accuracy of the model
+ 95.614 
  ```
  
  
