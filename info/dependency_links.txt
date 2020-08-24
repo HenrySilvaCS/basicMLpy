@@ -1,4 +1,1 @@
 
-Python 3.8 => https://www.python.org/downloads/release/python-380/
-Numpy => https://numpy.org/install/
-Scikitlearn 0.23 => https://scikit-learn.org/stable/install.html
