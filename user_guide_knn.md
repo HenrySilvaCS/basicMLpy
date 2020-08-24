@@ -22,5 +22,16 @@ Class of the K-Nearest Neighbors algorithm for regression and classification.
 **Examples:**
 ```python
 >>>from basicMLpy.nearest_neighbors import NearestNeighbors
->>>from sklearn.model_selection import train_test_split
+>>>from sklearn.datasets import load_boston
+>>>from basicMLpy.regression import mse_and_huber 
+>>>X,y = load_boston(return_X_y=True)
+>>>model = NearestNeighbors()
+>>>predictions = model.predict(X,y)
+>>>print(y[0:10])
+[24.  21.6 34.7 33.4 36.2 28.7 22.9 27.1 16.5 18.9]
+>>>print(predictions[0:10])
+[24. 23. 32. 32. 32. 30. 20. 21. 18. 21.]
+>>>print(mse_and_huber(predictions,y)[0])
+11.59118577075099
+
 ```
