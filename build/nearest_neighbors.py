@@ -1,5 +1,5 @@
 # # basicMLpy.nearest_neighbors module
-import numpy
+import numpy as np
 from sklearn.model_selection import train_test_split
 from scipy import linalg 
 def euclidean_distance(x1, x2):
@@ -10,7 +10,7 @@ def euclidean_distance(x1, x2):
             input a point(row vector or just a float/int number) to be used in the calculation.
         x2: array_like
             input a point(row vector or just a float/int number) to be used in the calculation.
-    Returns:
+    Returns: 
         np.sqrt(distance): float
             outputs the euclidean distance between x1 and x2.
     """
@@ -106,7 +106,7 @@ class NearestNeighbors:
         self.output = y.reshape((-1,1))
         self.data = np.hstack((self.input,self.output))
         predictions = np.zeros((len(self.output)))
-        for i in range(len(self.predictions)):
+        for i in range(len(predictions)):
             predictions[i] = make_prediction(self.data,i,self.n_neighbors,self.weights)
         return predictions 
     def kneighbors(self,row_num,n_neighbors):
@@ -120,3 +120,4 @@ class NearestNeighbors:
         """ 
         kneighbors = get_neighbors(self.input,row_num,n_neighbors)
         return kneighbors
+
