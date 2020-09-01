@@ -1,5 +1,5 @@
 theme: jekyll-theme-slate
 title: basicMLpy
-description: Python package for Machine Learning
+description: A Python package for Machine Learning
 markdown: kramdown
 highlighter: rouge
