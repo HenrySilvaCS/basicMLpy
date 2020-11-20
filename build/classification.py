@@ -98,16 +98,16 @@ def binary_classification_default(x,y,tsize,n_iter):
     prediction = probability_vector(X_test,theta)
     p = np.round(prediction)
     counter = 0
+    exp_loss = 0
     for i in range(len(prediction)):
         if np.absolute(p[i] - Y_test[i]) == 0:
             counter = counter 
         else:
             counter += 1
-    accuracy = np.round(((np.size(Y_test,0) - counter)/np.size(Y_test,0)) * 100)
-    exp_loss = 0
-    for i in range(len(prediction)):
         exp_loss += np.exp(-1 * Y_test[i] * prediction[i])
-        prediction_final = probability_vector(x,theta)
+        
+    accuracy = np.round(((np.size(Y_test,0) - counter)/np.size(Y_test,0)) * 100)
+    prediction_final = probability_vector(x,theta)
     return theta, accuracy, float(exp_loss), np.round(prediction_final)
 def one_vs_all_default(x,y,k,tsize,n_iter):
     """
@@ -164,16 +164,18 @@ def one_vs_all_default(x,y,k,tsize,n_iter):
             result[i,0] = np.argmax(probability_matrix[i,:])
         for i in range(len(prob_final)):
             result_final[i,0] = np.argmax(prob_index[i,:])
+            
+        exp_loss = 0    
         for i in range(len(result)):
             counter = 0
             if np.absolute(result[i] - Y_test[i]) == 0:
                 counter = counter 
             else:
                 counter = counter + 1
+            exp_loss += np.exp(-1 * Y_test[i] * results_loss[i] )    
+                
         accuracy = np.round(((np.size(Y_test,0) - counter)/np.size(Y_test,0)) * 100)
-        exp_loss = 0
-        for i in range(len(result)):
-            exp_loss += np.exp(-1 * Y_test[i] * results_loss[i] )
+        
         return theta, accuracy, float(exp_loss), result_final
 def acc_and_loss(prediction,ytest):
     """
