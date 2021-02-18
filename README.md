@@ -21,11 +21,11 @@ basicMLpy is a package that implements simple machine learning algorithms. It cu
 The documentation will be available at a proper site soon. For now it can be found in the main code for each module.<br />
 ## Installation <br />
 To install basicMLpy run the following command: <br />
-`pip install -i https://test.pypi.org/simple/ basicMLpy` <br />
+`pip install basicMLpy` <br />
 ## Dependencies <br />
 basicMLpy requires Python >= 3.8, Numpy >= 1.19, Scipy >= 1.5.2, scikit-learn >= 0.23. <br />
 ## On pypi <br />
-https://test.pypi.org/project/basicMLpy/<br />
+https://pypi.org/project/basicMLpy/<br />
 ## On Github <br />
 https://github.com/HenrySilvaCS/basicMLpy
 ## Some thoughts <br />
