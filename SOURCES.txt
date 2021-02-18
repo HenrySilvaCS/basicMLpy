@@ -1,0 +1,15 @@
+README.md
+setup.py
+basicMLpy/__init__.py
+basicMLpy/classification.py
+basicMLpy/ensemble.py
+basicMLpy/loss_functions.py
+basicMLpy/model_selection.py
+basicMLpy/nearest_neighbors.py
+basicMLpy/regression.py
+basicMLpy/utils.py
+basicMLpy.egg-info/PKG-INFO
+basicMLpy.egg-info/SOURCES.txt
+basicMLpy.egg-info/dependency_links.txt
+basicMLpy.egg-info/requires.txt
+basicMLpy.egg-info/top_level.txt
