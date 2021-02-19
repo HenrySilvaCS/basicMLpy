@@ -9,5 +9,5 @@ Thank you for checking out basicMLpy! Any suggestions or ideas can be sent to my
 
 
 Social Media:
-* [LinkedIn](https://www.linkedin.com/in/henrique-soares-b478841a2/?locale=en_US)
+* [LinkedIn](https://www.linkedin.com/in/henrysilvacs/?locale=en_US)
 * [GitHub](https://github.com/HenrySilvaCS)
