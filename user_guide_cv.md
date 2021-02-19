@@ -1,8 +1,8 @@
 [Home](https://henrysilvacs.github.io/basicMLpy/)  | [Install](https://henrysilvacs.github.io/basicMLpy/install) | [User Guide](https://henrysilvacs.github.io/basicMLpy/user_guide) | [Coming up next](https://henrysilvacs.github.io/basicMLpy/coming_up_next) | [About the author](https://henrysilvacs.github.io/basicMLpy/about)
-# basicMLpy.cross_validation
+# basicMLpy.model_selection
 #### CrossValidation
  ```python
- class basicMLpy.cross_validation.CrossValidation(n_folds,function,**kwargs)
+ class basicMLpy.cross_validation.CrossValidation(estimator,loss_function,n_folds,return_estimator=False)
  ```
  Class of the cross-validation algorithm.<br />
 
@@ -24,15 +24,17 @@
 
 **Examples:**
 ```python
->>>from basicMLpy.cross_validation import CrossValidation
+>>>from basicMLpy.model_selection import CrossValidation
 >>>from sklearn.datasets import load_breast_cancer
 >>>from sklearn.model_selection import train_test_split
+>>>from basicMLpy.classification import IRLSClassifier
+>>>from basicMLpy.loss_functions import exponential_loss
 >>>X,y = load_breast_cancer(return_X_y=True)
 >>>X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size = 0.2, random_state=5)
->>>model_selection = CrossValidation(n_folds=5,function='IRLSClassifier',k=2,n_iter=14)
->>>model_selection.fit(X_train,Y_train)
->>>print(model_selection.cv_scores())
-[4.3956044  4.3956044  6.59340659 2.1978022  5.49450549]
->>>print(model_selection.expected_generalization_error())
-4.615
+>>>classifier = IRLSClassifier(k=2)
+>>>cv = CrossValidation(classifier,exponential_loss,3,return_estimator=True)
+>>>cv.fit(X_train,Y_train)
+>>>cv.scores()
+>>>cv.expected_generalization_error()
+>>>cv.get_cv_estimators()
 ```
