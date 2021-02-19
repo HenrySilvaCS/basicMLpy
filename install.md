@@ -3,18 +3,19 @@
 basicMLpy can be installed by downloading the latest official release. Currently the package is only available through the pip package.<br />
 To install the latest version of basicMLpy, run the following command:<br />
 ```
-pip install -i https://test.pypi.org/simple/ basicMLpy
+pip install basicMLpy
 ```
 If you want to install a specific version, run the following:<br />
 ```
-pip install -i https://test.pypi.org/simple/ basicMLpy==*version*
+pip install basicMLpy==*version*
 ```
 The source code for the latest version of the package is available [Here](https://github.com/HenrySilvaCS/basicMLpy)<br />
-The source code for all the versions of the package is available [Here](https://test.pypi.org/project/basicMLpy/#history)
+The source code for all the versions of the package is available [Here](https://pypi.org/project/basicMLpy/#history)
 ## Dependecies
 basicMLpy requires:<br />
 * Python (>= 3.8); Download python [here](https://www.python.org/downloads/release/python-380/)
 * Numpy (>= 1.19); Download numpy [here](https://numpy.org/install/)
+* Scipy (>= 1.5.2); Download scipy [here](https://www.scipy.org/)
 * Scikit learn(>= 0.23); Download sklearn [here](https://scikit-learn.org/stable/install.html)
 
 
