@@ -27,6 +27,7 @@ Class of the Iteratively Reweighted Least Squares algorithmn for classification,
   >>>from sklearn.datasets import load_breast_cancer
   >>>from basicMLpy.classification import IRLSClassifier
   >>>from basicMLpy.loss_functions import standard_accuracy
+  >>>X_train,X_test,Y_train,Y_test = train_test_split(X,y)
   >>>model = IRLSCLassifier(k=2)
   >>>model.fit(X_train,Y_train)
   >>>print(standard_accuracy(X_train,Y_train))
