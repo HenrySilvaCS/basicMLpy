@@ -119,14 +119,12 @@ class IRLSClassifier:
         parameters() -> Returns the calculated parameters for the linear model.
 
     """
-    def __init__(self,k,tsize = 0.2,n_iter=15):
+    def __init__(self,k,n_iter=15):
         """
         Initialize self.
         Inputs:
             k: int
                 input the number k of classes associated with the dataset. 
-            tsize: float
-                Input a value between 0.0 and 1.0 that defines the proportion of the dataset to be used in the validation set; default is set to 0.2.
             n_iter: int
                 Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence; default is set to 15.
         """
