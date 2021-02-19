@@ -30,12 +30,12 @@ Class of the Random Forest Classifier Model.<br />
  >>>from sklearn.datasets import load_boston
  >>>from sklearn.model_selection import train_test_split
  >>>from basicMLpy.ensemble import RandomForestRegressor
- >>>from basicMLpy.regression import mse_and_huber
+ >>>from basicMLpy.loss_functions import mse
  >>>X,y = load_boston(return_X_y=True)
  >>>X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size = 0.2, random_state=5) 
  >>>model = RandomForestRegressor(n_estimators = 100, criterion = 'mse', max_features = 1/3)
  >>>model.fit(X_train,Y_train)
- >>>print(np.round(mse_and_huber(model.predict(X_test),Y_test)[0],3)) #gets the mse
+ >>>print(np.round(mse(model.predict(X_test),Y_test),3))
  12.893
 ```
 
@@ -72,12 +72,12 @@ Class of the Random Forest Classifier Model.<br />
  >>>from sklearn.model_selection import train_test_split
  >>>from sklearn.datasets import load_breast_cancer
  >>>from basicMLpy.ensemble import RandomForestClassifier
- >>>from basicMLpy.classification import acc_and_loss
+ >>>from basicMLpy.loss_functions import standard_accuracy
  >>>X,y = load_breast_cancer(return_X_y=True)
  >>>model = RandomForestClassifier(n_estimators = 100, n_classes = 2)
  >>>model.fit(X_train,Y_train)
- >>>print(np.round(bpc.acc_and_loss(model.predict(X_test),Y_test)[0],3)) #gets the accuracy in %
- 95.614 
+ >>>print(np.round(standard_accuracy(model.predict(X_test),Y_test),3))
+ 0.95614 
  ```
  
  
@@ -104,15 +104,15 @@ AdaBoost algorithm for weak classifiers, that can fit discrete classification pr
  ```python
 >>>from sklearn.datasets import make_classification
 >>>from basicMLpy.ensemble import AdaBoostClassifier
->>>from basicMLpy.classification import acc_and_loss
+>>>from basicMLpy.loss_functions import standard_accuracy
 >>>X, y = make_classification(n_samples=1000, n_features=4,
 ...                            n_informative=2, n_redundant=0,
 ...                            random_state=0, shuffle=False)
 >>>model = AdaBoostClassifier(n_estimators=100)
 >>>model.fit(X,y)
 >>>prediction = model.predict(X)
->>>print(acc_and_loss(prediction,y)[0])
-95.0
+>>>print(standard_accuracy(prediction,y))
+0.95
  ```
  
  
@@ -145,12 +145,12 @@ GradientBoost algorithm for supervised learning, that can fit regression problem
  ```python
  >>>from sklearn.datasets import load_boston
  >>>from sklearn.model_selection import train_test_split
- >>>from basicMLpy.regression import mse_and_huber
+ >>>from basicMLpy.loss_functions import mse
  >>>from basicMLpy.ensemble import GBRegressor
  >>>X,y = load_boston(return_X_y=True)
  >>>X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size = 0.2, random_state=5)  
  >>>model = GBRegressor(n_estimators = 100, loss_func = 'mse', max_depth = 3)
  >>>model.fit(X_train,Y_train)
- >>>print(np.round(mse_and_huber(model.predict(X_test),Y_test)[0],3)) #gets the mse
+ >>>print(np.round(mse(model.predict(X_test),Y_test),3))
  18.155
  ```
