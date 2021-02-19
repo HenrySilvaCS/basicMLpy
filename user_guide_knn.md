@@ -23,7 +23,7 @@ Class of the K-Nearest Neighbors algorithm for regression and classification.
 ```python
 >>>from basicMLpy.nearest_neighbors import NearestNeighbors
 >>>from sklearn.datasets import load_boston
->>>from basicMLpy.regression import mse_and_huber 
+>>>from basicMLpy.loss_functions import mse 
 >>>X,y = load_boston(return_X_y=True)
 >>>model = NearestNeighbors()
 >>>predictions = model.predict(X,y)
@@ -31,7 +31,7 @@ Class of the K-Nearest Neighbors algorithm for regression and classification.
 [24.  21.6 34.7 33.4 36.2 28.7 22.9 27.1 16.5 18.9]
 >>>print(predictions[0:10])
 [24. 23. 32. 32. 32. 30. 20. 21. 18. 21.]
->>>print(mse_and_huber(predictions,y)[0])
+>>>print(mse(predictions,y))
 11.59118577075099
 
 ```
