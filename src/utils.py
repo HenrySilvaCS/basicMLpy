@@ -2,29 +2,29 @@
 import numpy as np
 
 def check_for_intercept(x):
-	"""
-	Checks if a given array has an intercept column,i.e. a column of ones. Adds the intercept if the array doesn't have it.
-	Inputs:
-	    x: array
-	        input array of input points.
-	Returns:
-	    x: array
-	        outputs the modified array of input points.
+    """
+    Checks if a given array has an intercept column,i.e. a column of ones. Adds the intercept if the array doesn't have it.
+    Inputs:
+        x: array
+            input array of input points.
+    Returns:
+        x: array
+            outputs the modified array of input points.
 
-	"""
-	if(len(x.shape) != 1):
-		if(not (x[:,0] == 1).all()):
-			print("Array of inputs was passed without intercept.\nAdding intercept...")
-			ones = np.ones((len(x),1))
-			x = np.hstack((ones,x))
-			return x 
-		else:
-			return x 
-	else:
-		print("Array of inputs was passed without intercept. Adding intercept...")
-		ones = np.ones((len(x)))
-		x = np.vstack((ones,x)).T
-		return x 
+    """
+    if(len(x.shape) != 1):
+        if(not (x[:,0] == 1).all()):
+            print("Array of inputs was passed without intercept.\nAdding intercept...")
+            ones = np.ones((len(x),1))
+            x = np.hstack((ones,x))
+            return x 
+        else:
+            return x 
+    else:
+        print("Array of inputs was passed without intercept. Adding intercept...")
+        ones = np.ones((len(x)))
+        x = np.vstack((ones,x)).T
+        return x 
 
 def residuals(y,prediction,loss_func):
     """
@@ -74,17 +74,17 @@ def optimal_gamma(y,prediction,loss_func):
         return np.mean(res)
 
 def split_indices(x,n_folds):
-	"""
-	Splits the indices of a given array into n folds.
-	Inputs:
-		x: array
-		    input the array of input points.
-		n_folds: int
-		    input the number of folds to create.
-	Returns:
+    """
+    Splits the indices of a given array into n folds.
+    Inputs:
+        x: array
+            input the array of input points.
+        n_folds: int
+            input the number of folds to create.
+    Returns:
         fold_idxs: list of lists of int
             outputs a list of folds. each fold is a list of indices.
-	"""
+    """
     try:
         assert len(x) % n_folds == 0
     except:
@@ -121,3 +121,22 @@ def euclidean_distance(x1, x2):
     for i in range(len(x1)-1):
         distance += (x1[i] - x2[i])**2
     return np.sqrt(distance)
+
+
+def z_normalize(X):
+    """
+    Performs a z-normalization on a given input.
+    Inputs:
+        X: ndarray
+            input the array on which to perform the z-normalization. this assumes the array has the following format: rows = samples, columns = features. pass X.T otherwise.
+
+    Returns: 
+        z_normalized array:
+            outputs the z-normalized array, with each of the columns with mean = 0 and standard deviation = 1.
+    """
+    sample_mean = np.mean(X,axis=0)
+    X_centered = X - sample_mean
+    variance = np.var(X,ddof=1,axis=0)
+    std_dev = np.sqrt(variance)
+    return X_centered/std_dev
+

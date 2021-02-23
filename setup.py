@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="basicMLpy", 
-    version="1.0.2",
+    version="1.0.3",
     author="Henrique Silva",
     author_email="henriquesoares@dcc.ufmg.br",
     description="A collection of simple machine learning algorithms",
@@ -22,7 +22,7 @@ setuptools.setup(
     install_requires=[
        'numpy>=1.19',
        'scipy>=1.5.2',
-       'sklearn>=0.23'
+       'scikit-learn>=0.23'
     ],
     python_requires='>=3.8',
 )
