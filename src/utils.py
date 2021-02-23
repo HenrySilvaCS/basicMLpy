@@ -5,14 +5,14 @@ def check_for_intercept(x):
     """
     Checks if a given array has an intercept column,i.e. a column of ones. Adds the intercept if the array doesn't have it.
     Inputs:
-        x: array
-            input array of input points.
+        x: array or float/int
+            input array of input points or just a single input point.
     Returns:
-        x: array
-            outputs the modified array of input points.
+        x: array or float/int
+            outputs the modified array of input points or just a single input point.
 
     """
-    if(len(x.shape) != 1):
+    if((type(x) == type(np.array(1))) and (len(x.shape) > 1)):
         if(not (x[:,0] == 1).all()):
             print("Array of inputs was passed without intercept.\nAdding intercept...")
             ones = np.ones((len(x),1))
@@ -20,11 +20,13 @@ def check_for_intercept(x):
             return x 
         else:
             return x 
-    else:
+    elif ((type(x) == type(np.array(1))) and (len(x.shape) == 1)):
         print("Array of inputs was passed without intercept. Adding intercept...")
         ones = np.ones((len(x)))
         x = np.vstack((ones,x)).T
         return x 
+    else:
+      return np.array((1,x)).reshape((2,1))
 
 def residuals(y,prediction,loss_func):
     """
@@ -123,12 +125,14 @@ def euclidean_distance(x1, x2):
     return np.sqrt(distance)
 
 
-def z_normalize(X):
+def z_normalize(X,ddof=1):
     """
     Performs a z-normalization on a given input.
     Inputs:
         X: ndarray
             input the array on which to perform the z-normalization. this assumes the array has the following format: rows = samples, columns = features. pass X.T otherwise.
+        ddof: int, default = 1
+            input the number of degrees of freedom to use when performing the z-normalization.
 
     Returns: 
         z_normalized array:
@@ -136,7 +140,7 @@ def z_normalize(X):
     """
     sample_mean = np.mean(X,axis=0)
     X_centered = X - sample_mean
-    variance = np.var(X,ddof=1,axis=0)
+    variance = np.var(X,ddof=ddof,axis=0)
     std_dev = np.sqrt(variance)
     return X_centered/std_dev
 

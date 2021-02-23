@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="basicMLpy", 
-    version="1.0.5",
-    author="Henrique Silva",
+    version="1.0.6",
+    author="Henrique Soares Assumpção e Silva",
     author_email="henriquesoares@dcc.ufmg.br",
     description="A collection of simple machine learning algorithms",
     long_description=long_description,
