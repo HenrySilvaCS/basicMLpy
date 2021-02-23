@@ -206,9 +206,9 @@ class GBRegressor:
         raw_pred = np.ones((self.output_train.shape[0])) * self.gamma_0
 
         for m in range(self.n_estimators):
-            residuals = residuals(self.output_train,raw_pred,self.loss_func)
+            curr_residuals = residuals(self.output_train,raw_pred,self.loss_func)
             model = DecisionTreeRegressor(criterion = self.loss_func, random_state = self.random_state,max_depth=self.max_depth,max_features=self.max_features)
-            tree = model.fit(self.input_train,residuals)
+            tree = model.fit(self.input_train,curr_residuals)
             terminal_regions = tree.apply(self.input_train)
             gamma = np.zeros((len(tree.tree_.children_left)))
 
@@ -320,3 +320,4 @@ class AdaBoostClassifier:
         Gives the weights calculated by the AdaBooster
         """
         return self.tree_weights
+

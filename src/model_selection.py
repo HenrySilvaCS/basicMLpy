@@ -9,7 +9,7 @@ class CrossValidation:
     Class that performs the cross validation given a certain function.
     Methods:
         fit(X,y) -> Performs the cross validation algorithm on the training set(x,y).
-        cv_scores() -> Gives the cross validation scores for the training set.
+        scores() -> Gives the cross validation scores for the training set.
         expected_generalization_error() -> Gives the predicted generalization(out of sample) test error.
         get_cv_estimators() -> Returns all the estimators trained during the cross validation. Requires bool return_estimator to be set to True.
     """
@@ -43,11 +43,8 @@ class CrossValidation:
         self.test_scores = []
         self.train_scores = []
         self.folds = split_indices(x,self.n_folds)
-        x = check_for_intercept(x)
         if self.return_estimator:
             self.cv_estimators = []
-
-
         for curr_fold in range(len(self.folds)):
             curr_train_set = list(itertools.chain.from_iterable([x for i,x in enumerate(self.folds) if i != curr_fold]))
             self.estimator.fit(x[curr_train_set],y[curr_train_set])

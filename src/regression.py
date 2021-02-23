@@ -47,7 +47,7 @@ class LinearRegression:
 	Methods:
 		fit(x,y) -> Performs the linear regression algorithm on the training set(x,y).
 		predict(x) -> Predict value for X.
-		parameters() -> Returns the calculated parameters for the linear model.
+		get_parameters() -> Returns the calculated parameters for the linear model.
 	"""
 	def fit(self,x,y):
 		"""

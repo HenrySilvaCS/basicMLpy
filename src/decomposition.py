@@ -19,15 +19,15 @@ def SVD(A,compute_uv=True):
         V: array (if compute_uv = True)
             outputs the array of left singular vectors.
     """
-	eig_vals,V = np.linalg.eig(A.T @ A)
-	sigma = np.eye(np.sqrt(eig_vals))
+    eig_vals,V = np.linalg.eig(A.T @ A)
+    sigma = np.eye(np.sqrt(eig_vals))
 
-	if compute_uv:
-		U = A @ V @ np.linalg.pinv(sigma)
+    if compute_uv:
+        U = A @ V @ np.linalg.pinv(sigma)
 
-		return U,sigma,V
-	else:
-		return sigma
+        return U,sigma,V
+    else:
+        return sigma
 
 
 
@@ -48,12 +48,12 @@ def PCA(A,n_components=None,normalize=True):
         principal_components: array
             returns the array of principal component direction vectors.
     """
-	if(z_normalize):
-		A_norm = utils.z_normalize(A)
-	else:
-		if(n_components != None):
-			_,scores,principal_components = SVD(A)
-			return np.square(scores[:n_components]),principal_components[:n_components]
-		else:
-			_,singular_values,principal_components = SVD(A)
-			return np.square(singular_values),principal_components
+    if(z_normalize):
+        A_norm = utils.z_normalize(A)
+    else:
+        if(n_components != None):
+            _,scores,principal_components = SVD(A)
+            return np.square(scores[:n_components]),principal_components[:n_components]
+        else:
+            _,singular_values,principal_components = SVD(A)
+            return np.square(singular_values),principal_components

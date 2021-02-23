@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="basicMLpy", 
-    version="1.0.3",
+    version="1.0.5",
     author="Henrique Silva",
     author_email="henriquesoares@dcc.ufmg.br",
     description="A collection of simple machine learning algorithms",
@@ -18,7 +18,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    py_modules=["classification","regression","model_selection","ensemble","nearest_neighbors","utils","loss_functions"],
+    py_modules=["classification","regression","model_selection","ensemble","nearest_neighbors","decomposition","utils","loss_functions"],
     install_requires=[
        'numpy>=1.19',
        'scipy>=1.5.2',
