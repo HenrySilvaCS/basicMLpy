@@ -20,15 +20,17 @@ basicMLpy is a package that implements simple machine learning algorithms. It cu
 * Multiple functions for error evaluation, e.g. MSE, MAE, exponential loss, etc.
 ### The basicMLpy.utils module contains the following functionalities:
 * Useful functions utilized all throughout the other models.
-## Documentation <br />
-The documentation will be available at a proper site soon. For now it can be found in the main code for each module.<br />
 ## Installation <br />
 To install basicMLpy run the following command: <br />
 `pip install basicMLpy` <br />
+## Package's site and documentation <br />
+https://henrysilvacs.github.io/basicMLpy/
 ## Dependencies <br />
 basicMLpy requires Python >= 3.8, Numpy >= 1.19, Scipy >= 1.5.2, scikit-learn >= 0.23. <br />
 ## On Github <br />
 https://github.com/HenrySilvaCS/basicMLpy
+## On Pypi <br />
+https://pypi.org/project/basicMLpy/
 ## Some thoughts <br />
 This is a work in progress project, so more functionalities will be added with time. The main feature that will be implemented in the near future is a decomposition module.
 ## Author <br />
