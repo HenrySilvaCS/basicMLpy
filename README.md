@@ -1,5 +1,5 @@
 # basicMLpy <br />
-basicMLpy is a package that implements simple machine learning algorithms. It currently contains seven modules that implement multiple machine learning techniques for supervised learning.<br />
+basicMLpy is a package that implements simple machine learning algorithms. It currently contains eight modules that implement multiple machine learning techniques for supervised learning.<br />
 ### The basicMLpy.regression module contains the following functionalities:
 * Linear Regression 
 * Ridge Regression 
