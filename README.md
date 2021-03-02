@@ -32,6 +32,6 @@ https://github.com/HenrySilvaCS/basicMLpy
 ## On Pypi <br />
 https://pypi.org/project/basicMLpy/
 ## Some thoughts <br />
-This is a work in progress project, so more functionalities will be added with time. The main feature that will be implemented in the near future is a decomposition module.
+This is a work in progress project, so more functionalities will be added with time. In the near future, I will be focusing on the decomposition module.
 ## Author <br />
 Henrique Soares Assumpção e Silva
