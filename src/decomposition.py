@@ -15,12 +15,15 @@ def SVD(A,compute_uv=True):
         U: array (if compute_uv = True)
             outputs the array of right singular vectors.
         sigma: array
-            outputs the array of singular values.
+            outputs the array of singular values in decreasing order.
         V: array (if compute_uv = True)
             outputs the array of left singular vectors.
     """
     eig_vals,V = np.linalg.eig(A.T @ A)
-    sigma = np.eye(np.sqrt(eig_vals))
+    indx = np.argsort(-1 * eig_vals)
+    eig_vals = eig_vals[indx]
+    V = V[:,indx]
+    sigma = np.sqrt(eig_vals)[::-1]
 
     if compute_uv:
         U = A @ V @ np.linalg.pinv(sigma)
@@ -52,8 +55,8 @@ def PCA(A,n_components=None,normalize=True):
         A_norm = utils.z_normalize(A)
     else:
         if(n_components != None):
-            _,scores,principal_components = SVD(A)
+            _,scores,principal_components = SVD(A.T @ A)
             return np.square(scores[:n_components]),principal_components[:n_components]
         else:
-            _,singular_values,principal_components = SVD(A)
+            _,singular_values,principal_components = SVD(A.T @ A)
             return np.square(singular_values),principal_components
