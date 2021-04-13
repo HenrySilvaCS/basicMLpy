@@ -1,6 +1,6 @@
 # basicMLpy <br />
-[![Version](https://img.shields.io/badge/version-1.0.7-brightgreen.svg)](https://pypi.org/project/basicMLpy/)
-
+[![docs](https://img.shields.io/badge/docs-online-brightgreen)](https://henrysilvacs.github.io/basicMLpy/)
+[![Version](https://img.shields.io/badge/version-1.0.7-blue.svg)](https://pypi.org/project/basicMLpy/)
 
 basicMLpy is a package that implements simple machine learning algorithms. It currently contains eight modules that implement multiple machine learning techniques for supervised learning.<br />
 ### The basicMLpy.regression module contains the following functionalities:
