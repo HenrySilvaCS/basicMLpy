@@ -13,3 +13,9 @@ This section will give a walkthrough on every model of the package:
 
 [Nearest Neighbors Module](https://henrysilvacs.github.io/basicMLpy/user_guide_knn)
 
+[Utils Module](https://henrysilvacs.github.io/basicMLpy/user_guide_knn)
+
+[Decomposition Module](https://henrysilvacs.github.io/basicMLpy/todo)
+
+[Loss Functions Module](https://henrysilvacs.github.io/basicMLpy/todo)
+
