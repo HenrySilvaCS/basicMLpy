@@ -1,5 +1,14 @@
+from . import classification 
+from . import decomposition 
+from . import ensemble 
+from . import loss_functions
+from . import model_selection
+from . import nearest_neighbors 
+from . import regression 
+from . import utils
+
 """
-basicMLpy 1.0.7
+basicMLpy 1.0.8
 =================
 
 

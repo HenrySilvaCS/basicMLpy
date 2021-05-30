@@ -1,7 +1,7 @@
 # # basicMLpy.cross_validation module
 import numpy as np 
 import itertools
-from basicMLpy.utils import check_for_intercept, split_indices
+from .utils import check_for_intercept, split_indices
 
 
 class CrossValidation:

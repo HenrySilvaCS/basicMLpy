@@ -1,6 +1,6 @@
 # # basicMLpy.regression module
 import numpy as np 
-from basicMLpy.utils import check_for_intercept
+from .utils import check_for_intercept
 from scipy import linalg
 
 

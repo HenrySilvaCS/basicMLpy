@@ -3,8 +3,8 @@ import numpy as np
 from sklearn.tree  import DecisionTreeClassifier
 from sklearn.tree  import DecisionTreeRegressor
 from sklearn.tree._tree import TREE_LEAF
-from basicMLpy.utils import residuals, optimal_gamma
-from basicMLpy.loss_functions import misclassification
+from .utils import residuals, optimal_gamma
+from .loss_functions import misclassification
 #BAGGING
 class RandomForestRegressor:
     """

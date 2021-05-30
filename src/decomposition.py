@@ -1,6 +1,6 @@
 # # basicMLpy.decomposition module
 import numpy as np 
-from basicMLpy import utils 
+from . import utils 
 
 def SVD(A,compute_uv=True):
     """

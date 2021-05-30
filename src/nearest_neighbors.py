@@ -1,7 +1,7 @@
 # # basicMLpy.nearest_neighbors module
 import numpy as np
 from scipy import linalg 
-from basicMLpy.utils import euclidean_distance
+from .utils import euclidean_distance
 def get_neighbors(x, row_num, n_neighbors):
     """
     Gets the K nearest neighbors relative to a point in the dataset.
