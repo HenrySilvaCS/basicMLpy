@@ -48,7 +48,7 @@ def mae(prediction,target):
 	error = np.sum(np.abs(target - prediction))
 	return (error/len(target))
 
-def huber_loss(prediction,target,delta=0.5):
+def huber_loss(prediction,target,delta:float=0.5):
 	"""
 	Calculates the Huber Loss(also referred as Smooth L1 Loss) between two arrays
 	Inputs:
@@ -86,7 +86,7 @@ def exponential_loss(prediction,target):
 	check_inputs_shape(prediction,target)
 	return np.mean(np.exp(- prediction * target))
 
-def standard_accuracy(prediction,target,round_prediction=False):
+def standard_accuracy(prediction,target,round_prediction:bool=False):
 	"""
 	Calculates the accuracy of the predictions, given a target
 	Inputs:

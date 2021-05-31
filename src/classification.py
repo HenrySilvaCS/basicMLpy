@@ -54,7 +54,7 @@ def weight_matrix(dataset,parameters):
         w[i,i] = probability_k1(dataset[i,:],parameters) * (1 - probability_k1(dataset[i,:],parameters))
     return w 
 
-def newton_step(dataset,y,n_iter):
+def newton_step(dataset,y,n_iter:int):
     """
     Calculates the newton step for a given array of input points and it's corresponding vector of output points.
     Inputs:
@@ -75,7 +75,7 @@ def newton_step(dataset,y,n_iter):
     return theta
 
 
-def one_vs_all_default(x,y,k,n_iter):
+def one_vs_all_default(x,y,k:int,n_iter:int):
     """
     Fits a one-vs-all classification model on a given dataset of k > 2 classes.
     Inputs:
@@ -83,6 +83,8 @@ def one_vs_all_default(x,y,k,n_iter):
             input array of input points to be used as training set
         y: array
             input array of output points.
+        k: int 
+            input number of classes. Must be bigger than two.
         n_iter: int
             Input the number of iterations for the IRLS algorithm. The algorithm is pretty expensive, so I recommend starting with small values(by experience 15 seems to be a good guess) and then start slowly increasing it untill convergence.
     Returns:
@@ -119,7 +121,7 @@ class IRLSClassifier:
         parameters() -> Returns the calculated parameters for the linear model.
 
     """
-    def __init__(self,k,n_iter=15):
+    def __init__(self,k:int,n_iter:int=15):
         """
         Initialize self.
         Inputs:

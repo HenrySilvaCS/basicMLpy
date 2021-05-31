@@ -1,8 +1,8 @@
 # # basicMLpy.decomposition module
 import numpy as np 
-from . import utils 
+from basicMLpy.utils import z_normalize
 
-def SVD(A,compute_uv=True):
+def SVD(A,compute_uv:bool=True):
     """
     Performs the SVD decomposition of an array.
     Inputs:
@@ -26,7 +26,8 @@ def SVD(A,compute_uv=True):
     sigma = np.sqrt(eig_vals)[::-1]
 
     if compute_uv:
-        U = A @ V @ np.linalg.pinv(sigma)
+        sigma_mat = np.diag(sigma)
+        U = A @ V @ np.linalg.pinv(sigma_mat)
 
         return U,sigma,V
     else:
@@ -34,7 +35,7 @@ def SVD(A,compute_uv=True):
 
 
 
-def PCA(A,n_components=None,normalize=True):
+def PCA(A,n_components:int=None,normalize:bool=True):
     """
     Performs the PCA algorithm on an array.
     Inputs:
@@ -51,12 +52,12 @@ def PCA(A,n_components=None,normalize=True):
         principal_components: array
             returns the array of principal component direction vectors.
     """
-    if(z_normalize):
-        A_norm = utils.z_normalize(A)
+    if(normalize == True):
+        A_norm = z_normalize(A)
     else:
         if(n_components != None):
-            _,scores,principal_components = SVD(A.T @ A)
-            return np.square(scores[:n_components]),principal_components[:n_components]
+            _,singular_values,principal_components = SVD(A.T @ A)
+            return np.square(singular_values[:n_components]),principal_components[:n_components]
         else:
             _,singular_values,principal_components = SVD(A.T @ A)
             return np.square(singular_values),principal_components

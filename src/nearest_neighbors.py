@@ -2,7 +2,7 @@
 import numpy as np
 from scipy import linalg 
 from .utils import euclidean_distance
-def get_neighbors(x, row_num, n_neighbors):
+def get_neighbors(x, row_num:int, n_neighbors:int):
     """
     Gets the K nearest neighbors relative to a point in the dataset.
     Inputs:
@@ -25,7 +25,7 @@ def get_neighbors(x, row_num, n_neighbors):
     for i in range(n_neighbors):
         neighbors.append(distances[i][0])
     return np.array(neighbors)
-def make_prediction(x,row_num,n_neighbors,weights):
+def make_prediction(x,row_num:int,n_neighbors:int,weights:str):
     """
     Predicts the output value based on the k nearest neighbors relative to an input point.
     Inputs:
@@ -93,7 +93,7 @@ class NearestNeighbors:
         for i in range(len(predictions)):
             predictions[i] = make_prediction(self.data,i,self.n_neighbors,self.weights)
         return predictions 
-    def kneighbors(self,row_num,n_neighbors):
+    def kneighbors(self,row_num:int,n_neighbors:int):
         """
         Gets the k-nearest neighbors to a certain point.
         Inputs:

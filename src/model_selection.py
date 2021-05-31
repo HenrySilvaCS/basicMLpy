@@ -13,7 +13,7 @@ class CrossValidation:
         expected_generalization_error() -> Gives the predicted generalization(out of sample) test error.
         get_cv_estimators() -> Returns all the estimators trained during the cross validation. Requires bool return_estimator to be set to True.
     """
-    def __init__(self,estimator,loss_function,n_folds,return_estimator=False):
+    def __init__(self,estimator,loss_function,n_folds:int,return_estimator:bool=False):
         """
         Initialize self.
         Inputs:

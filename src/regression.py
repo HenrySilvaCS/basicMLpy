@@ -22,7 +22,7 @@ def qr_regression(x,y):
 	theta = linalg.solve_triangular(r,b)
 	return theta
 
-def ridge_regression(x,y,reg_const):
+def ridge_regression(x,y,reg_const:float):
 	"""
 	Fits a ridge linear regression model on a given dataset.
 	Inputs:
@@ -91,7 +91,13 @@ class RidgeRegression(LinearRegression):
 		predict(x) -> Predict value for X.
 		parameters() -> Returns the calculated parameters for the linear model.
 	"""
-	def __init__(self,reg_lambda):
+	def __init__(self,reg_lambda:float):
+		"""
+		Initialize self.
+		Inputs:
+			reg_lambda: float
+				input value that specifies the regularization constant to be used in the ridge regresssion;
+		"""
 		self.reg_lambda = reg_lambda
 
 	def fit(self,x,y):
@@ -102,8 +108,6 @@ class RidgeRegression(LinearRegression):
 				input array of input points, without the intercept(raw data).
 			y: array
 				input array of output points, usually a column vector.
-			reg_lambda: float
-				input value that specifies the regularization constant to be used in the ridge regresssion;
 		"""
 		self.parameters = ridge_regression(x,y,self.reg_lambda)
 

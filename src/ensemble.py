@@ -14,7 +14,7 @@ class RandomForestRegressor:
         predict(x) -> Predict regression value for X.
     
     """
-    def __init__(self,n_estimators,max_features =1/3,max_depth=None,criterion='mse',random_state=None):
+    def __init__(self,n_estimators:int,max_features:float =1/3,max_depth:int=None,criterion:str='mse',random_state:int=None):
         """
         Initialize self.
         Inputs:
@@ -82,7 +82,7 @@ class RandomForestClassifier:
         predict(x) -> Predict class for X.
     
     """
-    def __init__(self,n_estimators,n_classes,max_depth=None,criterion='gini',random_state=None,max_features='sqrt'):
+    def __init__(self,n_estimators:int,n_classes:int,max_depth:int=None,criterion:str='gini',random_state:int=None,max_features:str='sqrt'):
         """
         Initialize self.
         Inputs:
@@ -159,7 +159,7 @@ class GBRegressor:
         predict(x) -> Predict value for X.
     
     """
-    def __init__(self,n_estimators,loss_func,max_features=None,max_depth=None,random_state=None):
+    def __init__(self,n_estimators:int,loss_func:str,max_features=None,max_depth:int=None,random_state:int=None):
         """
         Inilialize self.
         Inputs:
@@ -248,7 +248,7 @@ class AdaBoostClassifier:
         predict(x) -> Predict class for X.
         get_tree_weights() -> Returns the weights for each of the n_iter trees generated during the boosting task.
     """
-    def __init__(self,n_estimators):
+    def __init__(self,n_estimators:int):
         """
         Initialize self.
         Inputs:

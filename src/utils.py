@@ -28,7 +28,7 @@ def check_for_intercept(x):
     else:
       return np.array((1,x)).reshape((2,1))
 
-def residuals(y,prediction,loss_func):
+def residuals(y,prediction,loss_func:Str):
     """
     Calcultes the generalized(or partial) residuals between the prediction and the output. The residuals are defined to be the negative value of the gradient of the loss function w.r.t. prediction.
     Inputs:
@@ -51,7 +51,7 @@ def residuals(y,prediction,loss_func):
     else:
         return (2*(y - prediction) - 1).reshape((-1,1))
 
-def optimal_gamma(y,prediction,loss_func):
+def optimal_gamma(y,prediction,loss_func:str):
     """
     Calculates the optimal value for the gamma constant based on a certain loss_func.
     Inputs:
@@ -75,7 +75,7 @@ def optimal_gamma(y,prediction,loss_func):
         res = y - prediction
         return np.mean(res)
 
-def split_indices(x,n_folds):
+def split_indices(x,n_folds:int):
     """
     Splits the indices of a given array into n folds.
     Inputs:
@@ -125,7 +125,7 @@ def euclidean_distance(x1, x2):
     return np.sqrt(distance)
 
 
-def z_normalize(X,ddof=1):
+def z_normalize(X,ddof:int=1):
     """
     Performs a z-normalization on a given input.
     Inputs:

@@ -8,7 +8,7 @@ from . import regression
 from . import utils
 
 """
-basicMLpy 1.0.8
+basicMLpy 1.0.9
 =================
 
 
