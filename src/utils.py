@@ -28,7 +28,7 @@ def check_for_intercept(x):
     else:
       return np.array((1,x)).reshape((2,1))
 
-def residuals(y,prediction,loss_func:Str):
+def residuals(y,prediction,loss_func:str):
     """
     Calcultes the generalized(or partial) residuals between the prediction and the output. The residuals are defined to be the negative value of the gradient of the loss function w.r.t. prediction.
     Inputs:
